@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg">
+  <div
+    class="container-fluid px-4 d-flex align-items-center justify-content-between"
+  >
+    <!-- Logo Left -->
+    <a class="navbar-brand me-3" routerLink="">
+      <img src="assets/ai_logo.png" alt="Logo" width="100" />
+    </a>
+
+    <!-- Hamburger for small screens -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Nav + Contact Wrap -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto text-center">
+        <li class="nav-item mx-2">
+          <a class="nav-link active" aria-current="page" routerLink="">Home</a>
+        </li>
+
+        <li class="nav-item dropdown mx-2">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Our Services
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Clean-tech</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item mx-2">
+          <a class="nav-link" routerLink="our-partners">Our Partners</a>
+        </li>
+
+        <li class="nav-item mx-2">
+          <a class="nav-link" routerLink="about-us">About Us</a>
+        </li>
+      </ul>
+
+      <!-- Contact Us Button Right -->
+      <div
+        class="d-flex justify-content-center justify-content-lg-end mt-3 mt-lg-0"
+      >
+        <!-- New reusable -->
+        <app-contact-us-button
+          link="#"
+          label="Contact Us"
+        ></app-contact-us-button>
+      </div>
+    </div>
+  </div>
+</nav>

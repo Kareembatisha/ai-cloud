@@ -1,0 +1,73 @@
+<section class="our-team-section">
+  <div class="container">
+    <!-- Heading + Paragraph -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Our Team</h2>
+      <p class="text-muted">
+        Our talented and diverse team brings deep expertise, innovative
+        thinking, and a shared mission to drive impact and transformation.
+      </p>
+    </div>
+
+    <!-- Team Cards Grid -->
+    <div class="row  justify-content-center team-grid">
+      @for(member of teamMembers; track member.name) {
+      <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+        <div class="team-card-wrapper">
+          <div
+            class="team-card d-flex flex-column text-start shadow-md rounded overflow-hidden"
+          >
+            <!-- Image -->
+            <div class="team-card-img flex-shrink-0">
+              <img
+                src="{{ member.imgSrc }}"
+                class="img-fluid h-100 w-100 object-fit-cover"
+                alt="{{ member.alt }}"
+              />
+            </div>
+
+            <!-- Content -->
+            <div
+              class="team-card-body p-3 d-flex flex-column justify-content-between flex-grow-1"
+            >
+              <div class="team-card-info mb-3">
+                <h5 class="team-member-name fw-bold mb-1">{{ member.name }}</h5>
+                <p class="team-member-role fw-medium mb-2">{{ member.role }}</p>
+                <p class="team-member-description text-muted small mb-3">
+                  {{ member.description }}
+                </p>
+              </div>
+
+              <!-- Social icons -->
+              <div class="team-social-icons d-flex justify-content-start gap-3">
+                @if(member.socialLinks.facebook) {
+                <a
+                  href="{{ member.socialLinks.facebook }}"
+                  class="social-icon"
+                  aria-label="Facebook"
+                  ><i class="bi bi-facebook"></i
+                ></a>
+                } @if(member.socialLinks.linkedin) {
+                <a
+                  href="{{ member.socialLinks.linkedin }}"
+                  class="social-icon"
+                  aria-label="LinkedIn"
+                  ><i class="bi bi-linkedin"></i
+                ></a>
+                } @if(member.socialLinks.email) {
+                <a
+                  href="{{ member.socialLinks.email }}"
+                  class="social-icon"
+                  aria-label="Email"
+                  ><i class="bi bi-envelope-fill"></i
+                ></a>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>

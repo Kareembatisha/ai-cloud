@@ -1,0 +1,271 @@
+/* ============================
+   Footer Left Section Styles
+   ============================ */
+.footer-left {
+  /* Logo image styling */
+  img {
+    display: block;
+  }
+
+  /* Headings (Address, Contact labels) */
+  h6 {
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 150%; /* ~21px */
+    color: #000000;
+  }
+
+  /* Paragraph text (Address, contact info) */
+  p {
+    margin: 0 0 8px 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%; /* ~21px */
+    color: #0061b7;
+  }
+
+  /* Social Media Icons */
+  .social-icons a {
+    font-size: 18px;
+    transition: color 0.3s ease;
+
+    /* Facebook brand color */
+    &.facebook {
+      color: #1877f2;
+
+      &:hover {
+        color: #0f4ab8;
+      }
+    }
+
+    /* Twitter brand color */
+    &.twitter {
+      color: #1da1f2;
+
+      &:hover {
+        color: #0d8ddb;
+      }
+    }
+
+    /* LinkedIn brand color */
+    &.linkedin {
+      color: #0a66c2;
+
+      &:hover {
+        color: #064a8b;
+      }
+    }
+
+    /* Instagram brand color (solid fallback) */
+    &.instagram {
+      color: #e4405f;
+
+      &:hover {
+        color: #b32b46;
+      }
+    }
+  }
+}
+
+/* ============================
+   Footer Right Section Links
+   ============================ */
+.footer-right a {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #0061b7;
+    text-decoration: underline;
+  }
+}
+
+/* ============================
+   Footer Bottom Links Styling
+   ============================ */
+.footer-links a {
+  font-size: 14px;
+  color: #000;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #0061b7;
+    text-decoration: underline;
+  }
+}
+
+/* ============================
+   Footer Content Layout
+   ============================ */
+.footer-content {
+  gap: 40px; /* spacing between left and right */
+}
+
+/* Responsive layout for small screens */
+@media (max-width: 767.98px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-left,
+  .footer-right {
+    max-width: 100%;
+  }
+}
+
+/* ============================
+   Footer Bottom Section
+   ============================ */
+.footer-bottom {
+  border-top-color: #0061b7;
+
+  /* Responsive layout for smaller desktops and tablets */
+  @media (max-width: 991.98px) {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.footer-gradient {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 158, 194, 0.18),
+      rgba(0, 158, 194, 0.18)
+    ),
+    linear-gradient(100.5deg, #ffffff 44.14%, #0061b7 91.98%);
+  border-radius: 14px 14px 0 0;
+  padding: 10px 20px;
+
+  /* Left side: image + text in a row */
+  .left-side {
+    width: 70%;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+
+    .image-container {
+      img {
+        display: block;
+        width: 190px;
+        height: 190px;
+        object-fit: contain; /* keep aspect ratio */
+      }
+    }
+
+    .text-container {
+      /* Heading */
+      h5 {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 100%;
+        color: #000000;
+        margin: 0 0 0.5rem 0;
+      }
+      /* Paragraph */
+      p {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 150%;
+        color: #000000;
+        margin: 0 0 1rem 0;
+      }
+    }
+  }
+
+  /* Right side: bottom-aligned image */
+  .right-side {
+    width: 30%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 0.5rem;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  /* Responsive styles for smaller screens */
+  @media (max-width: 991.98px) {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 15px;
+
+    .left-side {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0;
+
+      .image-container {
+        img {
+          width: 150px;
+          height: 150px;
+        }
+      }
+
+      .text-container {
+        h5 {
+          font-size: 32px;
+          line-height: 1.2;
+        }
+        p {
+          font-size: 20px;
+          line-height: 1.4;
+        }
+      }
+    }
+
+    .right-side {
+      width: 100%;
+      justify-content: center;
+      margin-top: 1rem;
+
+      img {
+        width: 120px;
+        height: auto;
+      }
+    }
+  }
+
+  /* Further scale down for small phones */
+  @media (max-width: 575.98px) {
+    .left-side {
+      .image-container img {
+        width: 120px;
+        height: 120px;
+      }
+
+      .text-container {
+        h5 {
+          font-size: 24px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .right-side img {
+      width: 90px;
+    }
+  }
+}

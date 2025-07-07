@@ -1,0 +1,128 @@
+.about-section {
+  width: 100%;
+  padding: 4rem 0;
+  overflow: hidden; // Prevent animation overflow
+
+  .about-wrapper {
+    max-width: 85%;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .section-title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 120%;
+    text-align: center;
+    letter-spacing: 0.2em;
+    color: #000000;
+  }
+
+  // Flex container for text and image
+  .about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+
+    @media (max-width: 767.98px) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  .about-text {
+    flex: 1;
+    will-change: transform, opacity; // Optimize animations
+
+    p {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.75rem;
+      line-height: 200%;
+      letter-spacing: 0.05em;
+      color: #000000;
+      margin-bottom: 1.5rem;
+      animation-duration: 1s;
+
+      @media (max-width: 991.98px) {
+        font-size: 1.25rem;
+        line-height: 180%;
+      }
+    }
+  }
+
+  .about-image {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    will-change: transform, opacity;
+
+    img {
+      border-radius: 12px;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      @media (max-width: 767.98px) {
+        max-width: 90%;
+        margin: 0 auto;
+      }
+    }
+
+    // Tech dots animation
+    .tech-dot {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(0, 97, 183, 0.2);
+      z-index: 1;
+      animation: float 6s infinite ease-in-out;
+
+      &-1 {
+        width: 80px;
+        height: 80px;
+        top: -20px;
+        left: -20px;
+        animation-delay: 0s;
+      }
+
+      &-2 {
+        width: 60px;
+        height: 60px;
+        bottom: -10px;
+        right: -10px;
+        animation-delay: 1s;
+      }
+    }
+  }
+}
+
+.blue-letter {
+  color: #0061b7;
+}
+
+// Floating animation for tech dots
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  50% {
+    transform: translateY(0) translateX(20px);
+  }
+  75% {
+    transform: translateY(10px) translateX(-10px);
+  }
+}
