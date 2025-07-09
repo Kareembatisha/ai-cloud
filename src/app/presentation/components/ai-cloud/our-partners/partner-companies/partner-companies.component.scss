@@ -77,3 +77,32 @@
     }
   }
 }
+
+
+.partners-section {
+  &:dir(rtl), &[dir="rtl"] {
+    text-align: right;
+    
+    .partners-text {
+      padding-right: 0 !important;
+      padding-left: 3rem;
+    }
+    
+    .partners-description {
+      padding-right: 0 !important;
+      padding-left: 1rem;
+    }
+    
+    .contact-link {
+      i.bi-arrow-right {
+        transform: rotate(180deg);
+        margin-right: 0.5rem;
+        margin-left: 0;
+      }
+    }
+    
+    .partners-cards {
+      direction: ltr; // Keep logos LTR even in RTL
+    }
+  }
+}

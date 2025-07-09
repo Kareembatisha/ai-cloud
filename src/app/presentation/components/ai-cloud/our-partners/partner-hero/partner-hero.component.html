@@ -1,13 +1,22 @@
 <!-- Hero Section -->
-<div class="hero-section text-center text-white rounded-3">
+<div class="hero-section text-center" appScrollTrigger>
   <div class="hero-mask d-flex justify-content-center align-items-center">
     <div>
-      <img src="assets/ai_logo_black.png" alt="AI Cloud Logo" class="img-fluid hero-logo" />
-      <p class="mb-3">
-        At AI Cloud, we’re proud to collaborate with a diverse network of
-        trusted partners — from government authorities and smart cities to
-        universities and innovation hubs. These partnerships play a vital role
-        in delivering intelligent, impactful solutions across the Kingdom.
+      <img
+        src="assets/ai_logo_white.png"
+        [alt]="'PARTNERS.HERO.LOGO_ALT' | translate"
+        class="img-fluid hero-logo"
+        appScrollTrigger
+        data-animation="zoomIn"
+        data-delay="0.3s"
+      />
+      <p
+        class="mb-3"
+        appScrollTrigger
+        data-animation="fadeInUp"
+        data-delay="0.6s"
+      >
+        {{ "PARTNERS.HERO.DESCRIPTION" | translate }}
       </p>
     </div>
   </div>

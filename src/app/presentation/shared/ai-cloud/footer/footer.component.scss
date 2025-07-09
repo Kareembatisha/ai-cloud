@@ -269,3 +269,39 @@
     }
   }
 }
+
+footer {
+  &:dir(rtl), &[dir="rtl"] {
+    text-align: right;
+    
+    .footer-content {
+      flex-direction: row-reverse;
+    }
+    
+    .footer-left {
+      text-align: right;
+    }
+    
+    .footer-right {
+      text-align: right;
+    }
+    
+    .social-icons {
+      a {
+        margin-right: 0 !important;
+        margin-left: 1rem;
+      }
+    }
+    
+    .footer-links {
+      a {
+        margin-left: 0 !important;
+        margin-right: 0.5rem;
+      }
+    }
+    
+    .footer-bottom {
+      flex-direction: row-reverse;
+    }
+  }
+}

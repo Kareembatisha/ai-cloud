@@ -4,24 +4,27 @@
     <div class="about-content">
       <!-- Text Content -->
       <div
-        class="about-text animate__animated animate__fadeInLeft animate__delay-1s"
+        class="about-text"
+        appScrollTrigger
+        data-animation="fadeInLeft"
+        data-delay="1s"
       >
         <p class="lead">
-          AI Cloud builds intelligent systems that help organizations streamline
-          operations, automate tasks, and gain real-time insights using AI and
-          IoT technologies. Our platforms are built for scalability,
-          customization, and performance — all under one smart ecosystem.
+          {{ "ABOUT.DESCRIPTION" | translate }}
         </p>
       </div>
 
-      <!-- Image -->
+      <!-- Image (unchanged) -->
       <div
-        class="about-image animate__animated animate__fadeInRight animate__delay-1s"
+        class="about-image"
+        appScrollTrigger
+        data-animation="fadeInRight"
+        data-delay="1s"
       >
         <img
           class="img-fluid"
           src="assets/Placeholder Lightbox.png"
-          alt="About Us"
+          [alt]="'ABOUT.IMAGE_ALT' | translate"
         />
         <!-- Optional floating elements around image -->
         <div class="tech-dot tech-dot-1"></div>

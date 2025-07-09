@@ -104,3 +104,27 @@
     }
   }
 }
+
+.carousel-wrapper {
+  &:dir(rtl),
+  &[dir="rtl"] {
+    .carousel-control-prev {
+      right: auto;
+      left: 0;
+    }
+
+    .carousel-control-next {
+      left: auto;
+      right: 0;
+    }
+
+    .carousel-caption {
+      text-align: right;
+    }
+
+    .carousel-indicators {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}

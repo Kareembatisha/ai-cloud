@@ -1,6 +1,6 @@
 .features-section {
   padding: 5rem 1rem;
-padding-bottom: 7rem;
+  padding-bottom: 7rem;
   .section-title {
     font-weight: 500;
     font-size: 32px;
@@ -99,4 +99,27 @@ padding-bottom: 7rem;
 
 .blue-letter {
   color: #0061b7;
+}
+
+.features-section {
+  &:dir(rtl),
+  &[dir="rtl"] {
+    text-align: right;
+
+    .section-title,
+    .section-subtitle {
+      text-align: center;
+    }
+
+    .features-grid {
+      .feature-item {
+        text-align: right;
+
+        h5,
+        p {
+          padding: 0 1rem;
+        }
+      }
+    }
+  }
 }

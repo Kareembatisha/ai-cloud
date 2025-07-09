@@ -6,7 +6,6 @@ export const routes: Routes = [
     redirectTo: 'ai-cloud',
     pathMatch: 'full',
   },
-
   {
     path: 'ai-cloud',
     loadChildren: () =>
@@ -18,5 +17,17 @@ export const routes: Routes = [
       import('./core/routes/clean_tech.routes').then(
         (m) => m.Clean_Tech_Routes
       ),
+  },
+  // Wildcard route for 404 pages
+  {
+    path: '404',
+    loadComponent: () =>
+      import('./presentation/pages/not-found/not-found.component').then(
+        (m) => m.NotFoundComponent
+      ),
+  },
+  {
+    path: '**',
+    redirectTo: '/404',
   },
 ];

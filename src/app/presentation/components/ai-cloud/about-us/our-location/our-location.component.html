@@ -1,9 +1,9 @@
 <div class="container my-5">
   <!-- Section Heading -->
   <div class="text-center mb-5 head-section">
-    <h2 class="fw-bold">Our Locations</h2>
+    <h2 class="fw-bold">{{ "LOCATIONS.TITLE" | translate }}</h2>
     <p class="text-muted mb-0">
-      Find us in multiple countries across the region
+      {{ "LOCATIONS.SUBTITLE" | translate }}
     </p>
   </div>
 
@@ -19,7 +19,7 @@
             <div class="location-image me-3 flex-shrink-0">
               <img
                 src="assets/ksa-location.png"
-                alt="Saudi Arabia"
+                [alt]="'LOCATIONS.KSA.IMAGE_ALT' | translate"
                 class="rounded"
                 width="80"
                 height="80"
@@ -27,20 +27,18 @@
               />
             </div>
             <div class="location-content">
-              <h6 class="mb-1 fw-bold location-title">Saudi Arabia</h6>
+              <h6 class="mb-1 fw-bold location-title">
+                {{ "LOCATIONS.KSA.TITLE" | translate }}
+              </h6>
               <p class="mb-2 small location-address">
-                123 Sample St, NY 10000 Saudi
+                {{ "LOCATIONS.KSA.ADDRESS" | translate }}
               </p>
               <a
                 href="https://maps.google.com?q=Saudi+Arabia"
                 target="_blank"
                 class="text-decoration-none location-link d-inline-flex align-items-center"
               >
-                View Map
-                <i
-                  class="fas fa-external-link-alt ms-2"
-                  style="font-size: 0.8rem"
-                ></i>
+                {{ "LOCATIONS.VIEW_MAP" | translate }}
               </a>
             </div>
           </div>
@@ -54,7 +52,7 @@
             <div class="location-image me-3 flex-shrink-0">
               <img
                 src="assets/egypt-location.png"
-                alt="Egypt"
+                [alt]="'LOCATIONS.EGYPT.IMAGE_ALT' | translate"
                 class="rounded"
                 width="80"
                 height="80"
@@ -62,18 +60,18 @@
               />
             </div>
             <div class="location-content">
-              <h6 class="mb-1 fw-bold location-title">Egypt</h6>
-              <p class="mb-2 small location-address">Cairo, Nasr City, 13 St</p>
+              <h6 class="mb-1 fw-bold location-title">
+                {{ "LOCATIONS.EGYPT.TITLE" | translate }}
+              </h6>
+              <p class="mb-2 small location-address">
+                {{ "LOCATIONS.EGYPT.ADDRESS" | translate }}
+              </p>
               <a
                 href="https://maps.google.com?q=Egypt"
                 target="_blank"
                 class="text-decoration-none location-link d-inline-flex align-items-center"
               >
-                View Map
-                <i
-                  class="fas fa-external-link-alt ms-2"
-                  style="font-size: 0.8rem"
-                ></i>
+                {{ "LOCATIONS.VIEW_MAP" | translate }}
               </a>
             </div>
           </div>
@@ -90,6 +88,7 @@
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
+          [title]="'LOCATIONS.MAP_TITLE' | translate"
         ></iframe>
       </div>
     </div>

@@ -103,3 +103,25 @@
     height: 50px;
   }
 }
+
+.location-card {
+  &:dir(rtl),
+  &[dir="rtl"] {
+    .location-item {
+      text-align: right;
+
+      .location-image {
+        margin-right: 0 !important;
+        margin-left: 1rem;
+      }
+
+      .location-link {
+        i.fas {
+          transform: rotate(180deg);
+          margin-right: 0.5rem;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

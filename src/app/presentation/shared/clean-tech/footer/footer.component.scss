@@ -1,0 +1,132 @@
+/* ============================
+   Footer Gradient Section
+   ============================ */
+.footer-gradient {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 158, 194, 0.18),
+      rgba(0, 158, 194, 0.18)
+    ),
+    linear-gradient(120deg, #ffffff 20%, #00a86b 50%, #0061b7 80%, #0076de 100%);
+  border-radius: 14px 14px 0 0;
+  padding: 60px 20px;
+  box-sizing: border-box;
+}
+
+/* Left side: image + text in a row */
+.footer-gradient .left-side {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 0.5rem 1rem;
+}
+
+.footer-gradient .image-container {
+  flex-shrink: 0;
+}
+
+.footer-gradient .footer-image {
+  width: 300px;
+  height: auto;
+  object-fit: contain;
+  margin-top: -160px;
+}
+
+.footer-gradient .text-container {
+  max-width: 600px;
+}
+
+.footer-gradient h5 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 100%;
+  color: #ffff;
+  margin: 0 0 0.5rem 0;
+}
+
+.footer-gradient p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 150%;
+  color: #ffff;
+  margin: 0 0 1.5rem 0;
+}
+
+/* Tablet and small desktop adjustments */
+@media (max-width: 1024px) {
+  .footer-gradient {
+    padding: 40px 20px;
+  }
+
+  .footer-gradient h5 {
+    font-size: 36px;
+  }
+
+  .footer-gradient p {
+    font-size: 24px;
+  }
+
+  .footer-gradient .footer-image {
+    width: 250px;
+    margin-top: -120px;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .footer-gradient {
+    padding: 30px 15px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-gradient .left-side {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 0;
+  }
+
+  .footer-gradient .footer-image {
+    width: 200px;
+    margin-top: -100px;
+    margin-bottom: 20px;
+  }
+
+  .footer-gradient h5 {
+    font-size: 28px;
+  }
+
+  .footer-gradient p {
+    font-size: 18px;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .footer-gradient {
+    padding: 20px 10px;
+  }
+
+  .footer-gradient .footer-image {
+    width: 150px;
+    margin-top: -80px;
+  }
+
+  .footer-gradient h5 {
+    font-size: 24px;
+  }
+
+  .footer-gradient p {
+    font-size: 16px;
+  }
+}

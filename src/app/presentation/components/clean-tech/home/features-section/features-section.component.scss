@@ -1,0 +1,101 @@
+.stock-management-section {
+  padding: 4rem;
+
+  .stock-description {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    /* identical to box height, or 27px */
+
+    /* Black */
+    color: #069f0a;
+  }
+
+  .stock-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 120%;
+    /* or 43px */
+
+    color: #0061b7;
+  }
+
+  .stock-sub-description {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    /* identical to box height, or 30px */
+
+    /* Black */
+    color: #000000;
+  }
+}
+
+.stock-intro {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 5rem;
+
+  margin-bottom: 4.5rem; // 👈 adds 72px gap below
+
+  .stock-intro-left,
+  .stock-intro-right {
+    flex: 1 1 45%;
+  }
+}
+.stock-features {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.stock-card {
+  flex: 1 1 22%;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.stock-card:hover {
+  transform: translateY(-6px);
+}
+
+.stock-card-img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+}
+
+.stock-card-title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 150%;
+  /* identical to box height, or 36px */
+  text-align: center;
+
+  color: #0061b7;
+  margin-bottom: 0.5rem;
+}
+
+.stock-card-text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  /* or 24px */
+  text-align: center;
+
+  /* Black */
+  color: #000000;
+}

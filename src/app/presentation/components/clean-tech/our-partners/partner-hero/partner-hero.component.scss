@@ -1,0 +1,46 @@
+.hero-section {
+  background-size: cover;
+  background-position: center;
+  background-image: url("/assets/our-partner-hero.png");
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5.5rem;
+
+  .hero-mask {
+    width: 100%;
+    max-width: 800px;
+    padding: 4rem 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img.hero-logo {
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.7;
+      text-align: center;
+      color: #ffffff;
+    }
+  }
+}
+
+// Optional responsive text size
+@media (min-width: 768px) {
+  .hero-section .hero-mask p {
+    font-size: 1.125rem; // ~18px
+  }
+
+  .hero-section .hero-mask img.hero-logo {
+    max-width: 250px;
+  }
+}

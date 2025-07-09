@@ -18,6 +18,8 @@
     "@angular/platform-browser": "^20.0.6",
     "@angular/platform-browser-dynamic": "^20.0.6",
     "@angular/router": "^20.0.6",
+    "@ngx-translate/core": "^16.0.4",
+    "@ngx-translate/http-loader": "^16.0.1",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.3.7",
     "flowbite": "^3.1.2",

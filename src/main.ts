@@ -1,8 +1,12 @@
-// src/main.ts
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
+import { appConfig } from './app/app.config';
+import { provideTranslate } from './translate.config';
 
-bootstrapApplication(AppComponent, appConfig).catch((err) =>
-  console.error(err)
-);
+bootstrapApplication(AppComponent, {
+  // Spread the appConfig first
+  ...appConfig,
+
+  // Then override/add providers
+  providers: [...(appConfig.providers || []), ...provideTranslate()],
+}).catch((err) => console.error(err));

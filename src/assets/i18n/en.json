@@ -1,0 +1,154 @@
+{
+  "NAV": {
+    "HOME": "Home",
+    "PRODUCTS": "Our Products",
+    "PARTNERS": "Our Partners",
+    "ABOUT": "About Us",
+    "CONTACT": "Contact Us"
+  },
+  "HERO": {
+    "TITLE": "Advanced Solutions to manage your business",
+    "DESCRIPTION": "Advanced solutions to manage your business and provide services powered by artificial intelligence.",
+    "CONTACT_BUTTON": "Contact Us"
+  },
+  "ABOUT": {
+    "DESCRIPTION": "AI Cloud builds intelligent systems that help organizations streamline operations, automate tasks, and gain real-time insights using AI and IoT technologies. Our platforms are built for scalability, customization, and performance — all under one smart ecosystem.",
+    "IMAGE_ALT": "About Us"
+  },
+  "FEATURES": {
+    "TITLE": "Smart Systems. Seamless Operations.",
+    "SUBTITLE": "Powerful tools to automate, customize, and secure your workflows — all in one place.",
+    "FEATURE1_ALT": "Smart Operating Platforms icon",
+    "FEATURE1_TITLE": "Smart Operating Platforms",
+    "FEATURE1_DESC": "We design and develop powerful platforms like Clean Tech, tailored for industries that require automation, real-time monitoring, and centralized control. These systems manage attendance, shifts, tasks, and more — all from a single dashboard.",
+    "FEATURE2_ALT": "Custom-Built Solutions icon",
+    "FEATURE2_TITLE": "Custom-Built Solutions",
+    "FEATURE2_DESC": "One size doesn't fit all. That's why we build tailor-made software for clients who need specific tools for their workflows.",
+    "FEATURE3_ALT": "Analytics icon",
+    "FEATURE3_TITLE": "Real-Time Reports & Analytics",
+    "FEATURE3_DESC": "Access actionable insights instantly. Our platforms generate live performance dashboards and KPIs for fast decisions.",
+    "FEATURE4_ALT": "Security icon",
+    "FEATURE4_TITLE": "Security & Integrations",
+    "FEATURE4_DESC": "Our systems come with secure protocols and APIs that sync with ERPs, HR tools, and more."
+  },
+  "CAROUSEL": {
+    "SLIDE1_LABEL": "Slide 1",
+    "SLIDE1_TITLE": "Complete Control of Your Facility",
+    "SLIDE1_DESC": "Clean Tech helps you manage all your facility operations—from cleanliness to workforce—in one smart dashboard. Get real-time updates, automated tasks, and full visibility across all departments, anytime, anywhere.",
+    "SLIDE2_LABEL": "Slide 2",
+    "SLIDE2_TITLE": "Automated Alerts",
+    "SLIDE2_DESC": "Get notified instantly when stock levels fall below the minimum threshold.",
+    "PREV_LABEL": "Previous",
+    "NEXT_LABEL": "Next"
+  },
+  "FOOTER": {
+    "SPEAK_TO_US_IMG_ALT": "Speak to us illustration",
+    "SPEAK_TO_US": "Speak to us",
+    "READY_FOR_FUTURE": "Ready to move your organization into the future?",
+    "CONTACT_US": "Contact Us",
+    "LOGO_ALT": "AI Cloud Logo",
+    "ADDRESS": "Address",
+    "ADDRESS_VALUE": "Riyadh, Kingdom of Saudi Arabia",
+    "CONTACT": "Contact",
+    "SOCIAL": {
+      "FACEBOOK": "Facebook",
+      "TWITTER": "Twitter",
+      "LINKEDIN": "LinkedIn",
+      "INSTAGRAM": "Instagram"
+    },
+    "LINKS": {
+      "HOME": "Home",
+      "SERVICES": "Our Services",
+      "PARTNERS": "Our Partners",
+      "ABOUT": "About Us",
+      "PRIVACY": "Privacy Policy",
+      "TERMS": "Terms of Service",
+      "COOKIES": "Cookies Settings"
+    },
+    "COPYRIGHT": "© 2025 Ai.cloud. All rights reserved."
+  },
+  "PARTNERS": {
+    "HERO": {
+      "LOGO_ALT": "AI Cloud Logo",
+      "DESCRIPTION": "At AI Cloud, we're proud to collaborate with a diverse network of trusted partners — from government authorities and smart cities to universities and innovation hubs. These partnerships play a vital role in delivering intelligent, impactful solutions across the Kingdom."
+    },
+    "TITLE": "Our Partners in Success",
+    "DESCRIPTION": "Backed by strategic partnerships with top government bodies, educational leaders, and smart innovation hubs — we drive lasting digital and operational transformation across the Kingdom. Together, we're shaping a smarter, cleaner future.",
+    "CONTACT_BUTTON": "Contact Us",
+    "LOGOS": {
+      "LOGO1_ALT": "Company 1 Logo",
+      "LOGO2_ALT": "Company 2 Logo",
+      "LOGO3_ALT": "Company 3 Logo",
+      "LOGO4_ALT": "Company 4 Logo",
+      "LOGO5_ALT": "Company 5 Logo",
+      "LOGO6_ALT": "Company 6 Logo"
+    }
+  },
+
+  "FEATURES-2": {
+    "TITLE": "Together, we drive smart transformation",
+    "SUBTITLE": "Together, we are redefining how cleanliness, operations, and digital transformation are managed.",
+    "PARTNERS": {
+      "DIGITAL_CITY": {
+        "ALT": "Digital City logo",
+        "TITLE": "Digital City",
+        "DESC": "Partnering with the Digital City to implement smart technologies that enhance urban efficiency, safety, and sustainability."
+      },
+      "PNU": {
+        "ALT": "Princess Nourah University logo",
+        "TITLE": "Princess Nourah University",
+        "DESC": "Partnering with the region's leading women's university to deploy smart campus systems and sustainable operations."
+      },
+      "PIF": {
+        "ALT": "Public Investment Fund logo",
+        "TITLE": "Public Investment Fund",
+        "DESC": "A strategic collaboration to support national innovation and deploy smart solutions that align with Vision 2030."
+      },
+      "KAFD": {
+        "ALT": "KAFD logo",
+        "TITLE": "KAFD (King Abdullah Financial District)",
+        "DESC": "Supporting operational excellence and digital transformation in one of Riyadh's most advanced business districts."
+      },
+      "SWA": {
+        "ALT": "Saudi Water Authority logo",
+        "TITLE": "Saudi Water Authority",
+        "DESC": "Working together to optimize water usage and improve maintenance efficiency using sensor-based technologies."
+      },
+      "GACA": {
+        "ALT": "GACA logo",
+        "TITLE": "GACA (General Authority of Civil Aviation)",
+        "DESC": "Helping airports and aviation sectors improve cleanliness, safety, and maintenance through real-time smart systems."
+      }
+    }
+  },
+  "CAROUSEL-2": {
+    "SLIDE1_LABEL": "Vision slide",
+    "SLIDE2_LABEL": "Mission slide",
+    "VISION": {
+      "TITLE": "Our vision",
+      "DESCRIPTION": "Describe what your company is building towards in the future. This vision statement should serve the purpose of selling the dream of the company to hiring talent, investors and partners."
+    },
+    "MISSION": {
+      "TITLE": "Our Mission",
+      "DESCRIPTION": "To contribute to the digital transformation of institutions by providing innovative technological solutions and integrated digital services to enhance quality and performance."
+    },
+    "PREV": "Previous",
+    "NEXT": "Next"
+  },
+  "LOCATIONS": {
+    "TITLE": "Our Locations",
+    "SUBTITLE": "Find us in multiple countries across the region",
+    "VIEW_MAP": "View Map",
+    "MAP_TITLE": "Our office locations",
+    "KSA": {
+      "IMAGE_ALT": "Saudi Arabia office location",
+      "TITLE": "Saudi Arabia",
+      "ADDRESS": "123 Sample St, NY 10000 Saudi"
+    },
+    "EGYPT": {
+      "IMAGE_ALT": "Egypt office location",
+      "TITLE": "Egypt",
+      "ADDRESS": "Cairo, Nasr City, 13 St"
+    }
+  }
+}

@@ -1,69 +1,113 @@
-<section class="features-section">
+<section class="features-section" appScrollTrigger>
   <div class="container text-center">
     <!-- Title -->
-    <h2 class="section-title">
+    <h2 class="section-title" appScrollTrigger data-animation="fadeInDown">
       <span class="blue-letter">A</span>i <span class="blue-letter">C</span>loud
     </h2>
-    <h2>Together, we drive smart transformation</h2>
+    <h2 appScrollTrigger data-animation="fadeInDown" data-delay="0.2s">
+      {{ "FEATURES-2.TITLE" | translate }}
+    </h2>
 
     <!-- Subtitle -->
-    <p class="section-subtitle">
-      Together, we are redefining how cleanliness, operations, and digital
-      transformation are managed.
+    <p
+      class="section-subtitle"
+      appScrollTrigger
+      data-animation="fadeIn"
+      data-delay="0.4s"
+    >
+      {{ "FEATURES-2.SUBTITLE" | translate }}
     </p>
 
     <!-- Features Grid -->
     <div class="features-grid">
-      <div class="feature-item">
-        <img src="assets/feature.png" alt="Feature 1" />
-        <h5>Digital City</h5>
-        <p>
-          Partnering with the Digital City to implement smart technologies that
-          enhance urban efficiency, safety, and sustainability.
-        </p>
+      <!-- Feature 1 -->
+      <div
+        class="feature-item"
+        appScrollTrigger
+        data-animation="fadeInUp"
+        data-delay="0.2s"
+      >
+        <img
+          [src]="'assets/company-circle-logo-6.png'"
+          [alt]="'FEATURES-2.PARTNERS.DIGITAL_CITY.ALT' | translate"
+        />
+        <h5>{{ "FEATURES-2.PARTNERS.DIGITAL_CITY.TITLE" | translate }}</h5>
+        <p>{{ "FEATURES-2.PARTNERS.DIGITAL_CITY.DESC" | translate }}</p>
       </div>
 
-      <div class="feature-item">
-        <img src="assets/feature.png" alt="Feature 2" />
-        <h5>Princess Nourah University</h5>
-        <p>
-          Partnering with the region’s leading women’s university to deploy
-          smart campus systems and sustainable operations.
-        </p>
+      <!-- Feature 2 -->
+      <div
+        class="feature-item"
+        appScrollTrigger
+        data-animation="fadeInUp"
+        data-delay="0.3s"
+      >
+        <img
+          [src]="'assets/company-circle-logo-3.png'"
+          [alt]="'FEATURES-2.PARTNERS.PNU.ALT' | translate"
+        />
+        <h5>{{ "FEATURES-2.PARTNERS.PNU.TITLE" | translate }}</h5>
+        <p>{{ "FEATURES-2.PARTNERS.PNU.DESC" | translate }}</p>
       </div>
 
-      <div class="feature-item">
-        <img src="assets/feature.png" alt="Feature 3" />
-        <h5>Public Investment Fund</h5>
-        <p>
-          A strategic collaboration to support national innovation and deploy
-          smart solutions that align with Vision 2030.
-        </p>
+      <!-- Feature 3 -->
+      <div
+        class="feature-item"
+        appScrollTrigger
+        data-animation="fadeInUp"
+        data-delay="0.4s"
+      >
+        <img
+          [src]="'assets/company-circle-logo-2.png'"
+          [alt]="'FEATURES-2.PARTNERS.PIF.ALT' | translate"
+        />
+        <h5>{{ "FEATURES-2.PARTNERS.PIF.TITLE" | translate }}</h5>
+        <p>{{ "FEATURES-2.PARTNERS.PIF.DESC" | translate }}</p>
       </div>
 
-      <div class="feature-item">
-        <img src="assets/feature.png" alt="Feature 4" />
-        <h5>KAFD (King Abdullah Financial District)</h5>
-        <p>
-          Supporting operational excellence and digital transformation in one of
-          Riyadh’s most advanced business districts.
-        </p>
+      <!-- Feature 4 -->
+      <div
+        class="feature-item"
+        appScrollTrigger
+        data-animation="fadeInUp"
+        data-delay="0.5s"
+      >
+        <img
+          [src]="'assets/company-circle-logo-4.png'"
+          [alt]="'FEATURES-2.PARTNERS.KAFD.ALT' | translate"
+        />
+        <h5>{{ "FEATURES-2.PARTNERS.KAFD.TITLE" | translate }}</h5>
+        <p>{{ "FEATURES-2.PARTNERS.KAFD.DESC" | translate }}</p>
       </div>
-      <div class="feature-item">
-        <img src="assets/feature.png" alt="Feature 4" />
-        <h5>Saudi Water Authority</h5>
-        <p>
-          Working together to optimize water usage and improve maintenance
-          efficiency using sensor-based technologies.
-        </p>
+
+      <!-- Feature 5 -->
+      <div
+        class="feature-item"
+        appScrollTrigger
+        data-animation="fadeInUp"
+        data-delay="0.6s"
+      >
+        <img
+          [src]="'assets/company-circle-logo-5.png'"
+          [alt]="'FEATURES-2.PARTNERS.SWA.ALT' | translate"
+        />
+        <h5>{{ "FEATURES-2.PARTNERS.SWA.TITLE" | translate }}</h5>
+        <p>{{ "FEATURES-2.PARTNERS.SWA.DESC" | translate }}</p>
       </div>
-      <div class="feature-item">
-        <img src="assets/feature.png" alt="Feature 4" />
-        <h5>GACA (General Authority of Civil Aviation)</h5>
-        <p>
-          Helping airports and aviation sectors improve cleanliness, safety, and
-          maintenance through real-time smart systems.
-        </p>
+
+      <!-- Feature 6 -->
+      <div
+        class="feature-item"
+        appScrollTrigger
+        data-animation="fadeInUp"
+        data-delay="0.7s"
+      >
+        <img
+          [src]="'assets/company-circle-logo-1.png'"
+          [alt]="'FEATURES-2.PARTNERS.GACA.ALT' | translate"
+        />
+        <h5>{{ "FEATURES-2.PARTNERS.GACA.TITLE" | translate }}</h5>
+        <p>{{ "FEATURES-2.PARTNERS.GACA.DESC" | translate }}</p>
       </div>
     </div>
   </div>

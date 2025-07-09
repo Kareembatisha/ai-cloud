@@ -1,9 +1,19 @@
-<nav class="navbar navbar-expand-lg">
+<nav
+  class="navbar navbar-expand-lg"
+  appScrollTrigger
+  data-animation="fadeInDown"
+>
   <div
     class="container-fluid px-4 d-flex align-items-center justify-content-between"
   >
     <!-- Logo Left -->
-    <a class="navbar-brand me-3" routerLink="">
+    <a
+      class="navbar-brand me-3"
+      routerLink=""
+      appScrollTrigger
+      data-animation="fadeInLeft"
+      data-delay="0.2s"
+    >
       <img src="assets/ai_logo.png" alt="Logo" width="100" />
     </a>
 
@@ -16,18 +26,38 @@
       aria-controls="navbarNav"
       aria-expanded="false"
       aria-label="Toggle navigation"
+      appScrollTrigger
+      data-animation="fadeInRight"
+      data-delay="0.2s"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <!-- Nav + Contact Wrap -->
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div
+      class="collapse navbar-collapse"
+      id="navbarNav"
+      appScrollTrigger
+      data-animation="fadeInDown"
+    >
       <ul class="navbar-nav mx-auto text-center">
-        <li class="nav-item mx-2">
-          <a class="nav-link active" aria-current="page" routerLink="">Home</a>
+        <li
+          class="nav-item mx-2"
+          appScrollTrigger
+          data-animation="fadeInUp"
+          data-delay="0.3s"
+        >
+          <a class="nav-link active" aria-current="page" routerLink="">
+            {{ "NAV.HOME" | translate }}
+          </a>
         </li>
 
-        <li class="nav-item dropdown mx-2">
+        <li
+          class="nav-item dropdown mx-2"
+          appScrollTrigger
+          data-animation="fadeInUp"
+          data-delay="0.4s"
+        >
           <a
             class="nav-link dropdown-toggle"
             href="#"
@@ -36,31 +66,73 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Our Services
+            {{ "NAV.PRODUCTS" | translate }}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Clean-tech</a></li>
+            <li>
+              <a class="dropdown-item" routerLink="/clean-tech">Clean-tech</a>
+            </li>
           </ul>
         </li>
 
-        <li class="nav-item mx-2">
-          <a class="nav-link" routerLink="our-partners">Our Partners</a>
+        <li
+          class="nav-item mx-2"
+          appScrollTrigger
+          data-animation="fadeInUp"
+          data-delay="0.5s"
+        >
+          <a class="nav-link" routerLink="our-partners">
+            {{ "NAV.PARTNERS" | translate }}
+          </a>
         </li>
 
-        <li class="nav-item mx-2">
-          <a class="nav-link" routerLink="about-us">About Us</a>
+        <li
+          class="nav-item mx-2"
+          appScrollTrigger
+          data-animation="fadeInUp"
+          data-delay="0.6s"
+        >
+          <a class="nav-link" routerLink="about-us">
+            {{ "NAV.ABOUT" | translate }}
+          </a>
         </li>
       </ul>
 
-      <!-- Contact Us Button Right -->
+      <!-- Language Selector and Contact Button -->
       <div
-        class="d-flex justify-content-center justify-content-lg-end mt-3 mt-lg-0"
+        class="d-flex align-items-center justify-content-center justify-content-lg-end mt-3 mt-lg-0 gap-3"
+        appScrollTrigger
+        data-animation="fadeInRight"
+        data-delay="0.7s"
       >
-        <!-- New reusable -->
-        <app-contact-us-button
-          link="#"
-          label="Contact Us"
-        ></app-contact-us-button>
+        <!-- Language Selector Dropdown -->
+        <div class="dropdown">
+          <button
+            class="btn btn-outline-secondary dropdown-toggle"
+            type="button"
+            id="languageDropdown"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            {{ currentLanguage }}
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+            <li>
+              <a class="dropdown-item" (click)="changeLanguage('en')"
+                >English</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" (click)="changeLanguage('ar')"
+                >العربيه</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Us Button Right -->
+        <app-contact-us-button [label]="'HERO.CONTACT_BUTTON' | translate">
+        </app-contact-us-button>
       </div>
     </div>
   </div>

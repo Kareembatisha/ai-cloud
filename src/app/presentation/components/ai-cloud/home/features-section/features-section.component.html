@@ -1,91 +1,88 @@
 <section class="features-section">
   <div class="container text-center">
     <!-- Title with letter animations -->
-    <h2 class="section-title animate__animated animate__fadeInDown">
-      <span
-        class="blue-letter animate__animated animate__fadeIn animate__delay-1s"
-        >S</span
-      >mart
-      <span
-        class="blue-letter animate__animated animate__fadeIn animate__delay-2s"
-        >S</span
-      >ystems.
-      <span
-        class="blue-letter animate__animated animate__fadeIn animate__delay-3s"
-        >S</span
-      >eamless
-      <span
-        class="blue-letter animate__animated animate__fadeIn animate__delay-4s"
-        >O</span
-      >perations.
+    <h2 class="section-title" appScrollTrigger data-animation="fadeInDown">
+      {{ "FEATURES.TITLE" | translate }}
     </h2>
 
     <!-- Subtitle -->
     <p
-      class="section-subtitle animate__animated animate__fadeIn animate__delay-1s"
+      class="section-subtitle"
+      appScrollTrigger
+      data-animation="fadeIn"
+      data-delay="1s"
     >
-      Powerful tools to automate, customize, and secure your workflows — all in
-      one place.
+      {{ "FEATURES.SUBTITLE" | translate }}
     </p>
 
     <!-- Features Grid -->
     <div class="features-grid">
       <div
-        class="feature-item animate__animated animate__fadeInUp animate__delay-2s"
+        class="feature-item"
+        appScrollTrigger
+        data-animation="fadeInUp"
+        data-delay="2s"
       >
         <div class="feature-icon-wrapper">
-          <img src="assets/feature.png" alt="Feature 1" />
+          <img
+            [src]="'assets/feature.png'"
+            [alt]="'FEATURES.FEATURE1_ALT' | translate"
+          />
           <div class="icon-pulse"></div>
         </div>
-        <h5>Smart Operating Platforms</h5>
-        <p>
-          We design and develop powerful platforms like Clean Tech, tailored for
-          industries that require automation, real-time monitoring, and
-          centralized control. These systems manage attendance, shifts, tasks,
-          and more — all from a single dashboard.
-        </p>
+        <h5>{{ "FEATURES.FEATURE1_TITLE" | translate }}</h5>
+        <p>{{ "FEATURES.FEATURE1_DESC" | translate }}</p>
       </div>
 
       <div
-        class="feature-item animate__animated animate__fadeInUp animate__delay-3s"
+        class="feature-item"
+        appScrollTrigger
+        data-animation="fadeInUp"
+        data-delay="3s"
       >
         <div class="feature-icon-wrapper">
-          <img src="assets/feature.png" alt="Feature 2" />
+          <img
+            [src]="'assets/feature.png'"
+            [alt]="'FEATURES.FEATURE2_ALT' | translate"
+          />
           <div class="icon-pulse"></div>
         </div>
-        <h5>Custom-Built Solutions</h5>
-        <p>
-          One size doesn't fit all. That's why we build tailor-made software for
-          clients who need specific tools for their workflows.
-        </p>
+        <h5>{{ "FEATURES.FEATURE2_TITLE" | translate }}</h5>
+        <p>{{ "FEATURES.FEATURE2_DESC" | translate }}</p>
       </div>
 
       <div
-        class="feature-item animate__animated animate__fadeInUp animate__delay-4s"
+        class="feature-item"
+        appScrollTrigger
+        data-animation="fadeInUp"
+        data-delay="4s"
       >
         <div class="feature-icon-wrapper">
-          <img src="assets/feature.png" alt="Feature 3" />
+          <img
+            [src]="'assets/feature.png'"
+            [alt]="'FEATURES.FEATURE3_ALT' | translate"
+          />
           <div class="icon-pulse"></div>
         </div>
-        <h5>Real-Time Reports & Analytics</h5>
-        <p>
-          Access actionable insights instantly. Our platforms generate live
-          performance dashboards and KPIs for fast decisions.
-        </p>
+        <h5>{{ "FEATURES.FEATURE3_TITLE" | translate }}</h5>
+        <p>{{ "FEATURES.FEATURE3_DESC" | translate }}</p>
       </div>
 
       <div
-        class="feature-item animate__animated animate__fadeInUp animate__delay-5s"
+        class="feature-item"
+        appScrollTrigger
+        data-animation="fadeInUp"
+        data-delay="5s"
       >
         <div class="feature-icon-wrapper">
-          <img src="assets/feature.png" alt="Feature 4" />
+          <img
+            [src]="'assets/feature.png'"
+            [alt]="'FEATURES.FEATURE4_ALT' | translate"
+          />
           <div class="icon-pulse"></div>
         </div>
-        <h5>Security & Integrations</h5>
-        <p>
-          Our systems come with secure protocols and APIs that sync with ERPs,
-          HR tools, and more.
-        </p>
+        <h5>{{ "FEATURES.FEATURE4_TITLE" | translate }}</h5>
+        <p>{{ "FEATURES.FEATURE4_DESC" | translate }}</p>
       </div>
     </div>
   </div>

@@ -1,0 +1,23 @@
+<div class="error-container">
+  <div class="error-content">
+    <div class="error-animation">
+      <svg class="error-icon" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M13,17h-2v-2h2V17z M13,13h-2V7h2V13z"
+        />
+      </svg>
+    </div>
+    <h1 class="error-title">404</h1>
+    <h2 class="error-subtitle">Page Not Found</h2>
+    <p class="error-message">
+      The requested URL <strong>{{ getCurrentUrl() }}</strong> was not found on
+      this server.
+    </p>
+    <div class="error-actions">
+      <button class="home-button" (click)="navigateToHome()">
+        Return to Homepage
+      </button>
+    </div>
+  </div>
+</div>

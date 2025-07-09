@@ -2,6 +2,21 @@
   padding: 4rem 1rem;
   overflow: hidden; // Prevent animation overflow
 
+  &:dir(rtl),
+  &[dir="rtl"] {
+    text-align: right;
+
+    .features-grid {
+      .feature-item {
+        text-align: right;
+      }
+    }
+
+    .section-title {
+      letter-spacing: 0; // Arabic doesn't use letter spacing
+    }
+  }
+
   .section-title {
     font-weight: 500;
     font-size: 32px;

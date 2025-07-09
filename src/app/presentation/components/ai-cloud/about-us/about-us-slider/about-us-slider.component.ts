@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-about-us-slider',
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './about-us-slider.component.html',
-  styleUrl: './about-us-slider.component.scss'
+  styleUrl: './about-us-slider.component.scss',
 })
-export class AboutUsSliderComponent {
-
-}
+export class AboutUsSliderComponent {}
