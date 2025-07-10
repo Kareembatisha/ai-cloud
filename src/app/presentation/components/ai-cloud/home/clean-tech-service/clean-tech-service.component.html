@@ -1,6 +1,6 @@
-<div id="stockCarousel" class="carousel slide" data-bs-ride="carousel">
-  <!-- 🔵 Circle Indicators -->
-  <div class="carousel-indicators">
+<!-- <div id="stockCarousel" class="carousel slide" data-bs-ride="carousel"> -->
+<!-- 🔵 Circle Indicators -->
+<!-- <div class="carousel-indicators">
     <button
       type="button"
       data-bs-target="#stockCarousel"
@@ -15,11 +15,11 @@
       data-bs-slide-to="1"
       [attr.aria-label]="'CAROUSEL.SLIDE2_LABEL' | translate"
     ></button>
-  </div>
+  </div> -->
 
-  <div class="carousel-inner">
-    <!-- Slide 1 -->
-    <div class="carousel-item active">
+<!-- <div class="carousel-inner"> -->
+<!-- Slide 1 -->
+<!-- <div class="carousel-item active">
       <div class="container">
         <div class="row align-items-center py-5">
           <div class="col-md-6">
@@ -34,10 +34,10 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <!-- Slide 2 -->
-    <div class="carousel-item">
+<!-- Slide 2 -->
+<!-- <div class="carousel-item">
       <div class="container">
         <div class="row align-items-center py-5">
           <div class="col-md-6">
@@ -52,11 +52,11 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </div> -->
+<!-- </div> -->
 
-  <!-- Arrows -->
-  <button
+<!-- Arrows -->
+<!-- <button
     class="carousel-control-prev"
     type="button"
     data-bs-target="#stockCarousel"
@@ -73,5 +73,49 @@
     [attr.aria-label]="'CAROUSEL.NEXT_LABEL' | translate"
   >
     <span class="carousel-control-next-icon"></span>
-  </button>
-</div>
+  </button> -->
+<!-- </div> -->
+
+<!-- ///////////////////////////////////////// -->
+
+<section class="about-section">
+  <h2 class="section-title">
+    Cl<span class="green-letter">e</span>an T<span class="green-letter">e</span
+    >ch S<span class="green-letter">e</span>rvic<span class="green-letter"
+      >e</span
+    >
+  </h2>
+  <div class="about-wrapper">
+    <!-- Flex Container for Text and Image -->
+    <div class="about-content">
+      <!-- Text Content -->
+      <div
+        class="about-text"
+        appScrollTrigger
+        data-animation="fadeInLeft"
+        data-delay="1s"
+      >
+        <h3>Smart Facility Operations Made Easy</h3>
+        <p class="lead">
+          An intelligent platform for cleaning and facility management —
+          combining sensors, real-time dashboards, and automation tools to track
+          attendance, shifts, tasks, and stock from one central hub.
+        </p>
+      </div>
+
+      <!-- Image -->
+      <div
+        class="about-image"
+        appScrollTrigger
+        data-animation="fadeInRight"
+        data-delay="1s"
+      >
+        <img
+          class="img-fluid"
+          src="assets/Placeholder Lightbox.png"
+          [alt]="'ABOUT.IMAGE_ALT' | translate"
+        />
+      </div>
+    </div>
+  </div>
+</section>

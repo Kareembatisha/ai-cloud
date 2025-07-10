@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { AboutUsSectionComponent } from '../../../components/ai-cloud/home/about-us-section/about-us-section.component';
 import { StockSectionComponent } from '../../../components/clean-tech/home/features-section/features-section.component';
 import { CleanTechServiceComponent } from '../../../components/ai-cloud/home/clean-tech-service/clean-tech-service.component';
@@ -9,66 +9,76 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-clean-tech-home',
   imports: [
-    // AboutUsSectionComponent,
-    // CleanTechServiceComponent,
-    // HeroSectionComponent,
-    // StockSectionComponent,
+    AboutUsSectionComponent,
+    CleanTechServiceComponent,
+    HeroSectionComponent,
+    StockSectionComponent,
     CommonModule,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
 export class CleanTechHomeComponent {
+  activeSection: string = 'hero';
   sections = [
-    { id: 'overview', title: 'Overview' },
-    { id: 'features', title: 'Features' },
-    { id: 'pricing', title: 'Pricing' },
-    { id: 'testimonials', title: 'Testimonials' },
-    { id: 'team', title: 'Our Team' },
-    { id: 'contact', title: 'Contact Us' },
+    { id: 'hero', title: 'Home' },
+    { id: 'about', title: 'About Us' },
+    { id: 'stock', title: 'Stock' },
+    { id: 'services', title: 'Services' },
   ];
 
-  activeSection = this.sections[0].id;
-  private scrollSub!: Subscription;
+  // Optionally, if you want to use ViewChildren for more precise control
+  @ViewChild('heroSection') heroSection!: ElementRef;
+  @ViewChild('aboutSection') aboutSection!: ElementRef;
+  // Add others as needed
 
   ngOnInit() {
-    this.scrollSub = fromEvent(window, 'scroll')
-      .pipe(debounceTime(10))
-      .subscribe(() => this.onScroll());
+    this.setupScrollSpy();
   }
 
-  ngOnDestroy() {
-    this.scrollSub?.unsubscribe();
+  setupScrollSpy() {
+    window.addEventListener('scroll', () => {
+      this.detectActiveSection();
+    });
   }
 
-  onScroll() {
-    const scrollPosition = window.scrollY + 100;
+  detectActiveSection() {
+    const scrollPosition = window.scrollY + 100; // Adding offset for better detection
 
-    for (const section of this.sections) {
+    // Get all sections and their positions
+    const sections = this.sections.map((section) => {
       const element = document.getElementById(section.id);
-      if (!element) continue;
+      return {
+        id: section.id,
+        offsetTop: element ? element.offsetTop : 0,
+        offsetHeight: element ? element.offsetHeight : 0,
+      };
+    });
 
-      const offsetTop = element.offsetTop;
-      const offsetHeight = element.offsetHeight;
+    // Find which section is currently in view
+    const currentSection = sections.find(
+      (section) =>
+        scrollPosition >= section.offsetTop &&
+        scrollPosition < section.offsetTop + section.offsetHeight
+    );
 
-      if (
-        scrollPosition >= offsetTop &&
-        scrollPosition < offsetTop + offsetHeight
-      ) {
-        this.activeSection = section.id;
-        break;
-      }
+    if (currentSection) {
+      this.activeSection = currentSection.id;
     }
   }
 
   scrollTo(sectionId: string) {
-    this.activeSection = sectionId;
     const element = document.getElementById(sectionId);
     if (element) {
       window.scrollTo({
-        top: element.offsetTop - 80,
+        top: element.offsetTop - 80, // Adjust for header height
         behavior: 'smooth',
       });
     }
+  }
+
+  // Clean up the event listener when component is destroyed
+  ngOnDestroy() {
+    window.removeEventListener('scroll', this.detectActiveSection);
   }
 }

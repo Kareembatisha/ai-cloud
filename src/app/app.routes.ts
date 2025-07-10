@@ -11,13 +11,13 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./core/routes/ai_cloud.routes').then((m) => m.AI_Cloud_ROUTES),
   },
-  {
-    path: 'clean-tech',
-    loadChildren: () =>
-      import('./core/routes/clean_tech.routes').then(
-        (m) => m.Clean_Tech_Routes
-      ),
-  },
+  // {
+  //   path: 'clean-tech',
+  //   loadChildren: () =>
+  //     import('./core/routes/clean_tech.routes').then(
+  //       (m) => m.Clean_Tech_Routes
+  //     ),
+  // },
   // Wildcard route for 404 pages
   {
     path: '404',

@@ -1,218 +1,371 @@
 // Stock Carousel Component Styles
-#stockCarousel {
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  margin: 2rem auto;
-  margin-bottom: 6rem;
-  max-width: 90%;
+// #stockCarousel {
+//   position: relative;
+//   border-radius: 12px;
+//   overflow: hidden;
+//   margin: 2rem auto;
+//   margin-bottom: 6rem;
+//   max-width: 90%;
 
-  .carousel-inner {
-    border-radius: 12px;
-  }
+//   .carousel-inner {
+//     border-radius: 12px;
+//   }
 
-  .carousel-item {
-    min-height: 300px;
-    padding: 2rem 0;
+//   .carousel-item {
+//     min-height: 300px;
+//     padding: 2rem 0;
 
-    .container {
-      height: 100%;
-    }
+//     .container {
+//       height: 100%;
+//     }
 
-    .row {
-      height: 100%;
-    }
-  }
+//     .row {
+//       height: 100%;
+//     }
+//   }
 
-  // Indicators styling
-  .carousel-indicators {
-    margin-bottom: 1rem;
+//   // Indicators styling
+//   .carousel-indicators {
+//     margin-bottom: 1rem;
 
-    button {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      border: 1px solid #0061b7;
-      background-color: transparent;
-      margin: 0 6px;
-      opacity: 0.7;
-      transition: all 0.3s ease;
+//     button {
+//       width: 10px;
+//       height: 10px;
+//       border-radius: 50%;
+//       border: 1px solid #0061b7;
+//       background-color: transparent;
+//       margin: 0 6px;
+//       opacity: 0.7;
+//       transition: all 0.3s ease;
 
-      &.active {
-        background-color: #0061b7;
-        opacity: 1;
-        transform: scale(1.2);
-      }
-    }
-  }
+//       &.active {
+//         background-color: #0061b7;
+//         opacity: 1;
+//         transform: scale(1.2);
+//       }
+//     }
+//   }
 
-  // Navigation arrows
-  .carousel-control-prev,
-  .carousel-control-next {
-    width: 50px;
-    height: 50px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 1;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+//   // Navigation arrows
+//   .carousel-control-prev,
+//   .carousel-control-next {
+//     width: 50px;
+//     height: 50px;
+//     background-color: rgba(255, 255, 255, 0.8);
+//     border-radius: 50%;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     opacity: 1;
+//     transition: all 0.3s ease;
+//     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
-    &:hover {
-      background-color: #0061b7;
+//     &:hover {
+//       background-color: #0061b7;
 
-      .carousel-control-prev-icon,
-      .carousel-control-next-icon {
-        filter: brightness(0) invert(1);
-      }
-    }
+//       .carousel-control-prev-icon,
+//       .carousel-control-next-icon {
+//         filter: brightness(0) invert(1);
+//       }
+//     }
 
-    &-icon {
-      width: 1.5rem;
-      height: 1.5rem;
-      background-size: 100% 100%;
-      filter: brightness(0) invert(0.3);
-    }
-  }
+//     &-icon {
+//       width: 1.5rem;
+//       height: 1.5rem;
+//       background-size: 100% 100%;
+//       filter: brightness(0) invert(0.3);
+//     }
+//   }
 
-  .carousel-control-prev {
-    left: 20px;
-  }
+//   .carousel-control-prev {
+//     left: 20px;
+//   }
 
-  .carousel-control-next {
-    right: 20px;
-  }
+//   .carousel-control-next {
+//     right: 20px;
+//   }
 
-  // Content styling
-  .slider-heading {
-    color: #0061b7;
-    margin-bottom: 1rem;
-    position: relative;
-    padding-left: 1.5rem;
+//   // Content styling
+//   .slider-heading {
+//     color: #0061b7;
+//     margin-bottom: 1rem;
+//     position: relative;
+//     padding-left: 1.5rem;
 
-    margin-bottom: 0.5rem;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 36px;
-    line-height: 120%;
-  }
+//     margin-bottom: 0.5rem;
+//     font-style: normal;
+//     font-weight: 600;
+//     font-size: 36px;
+//     line-height: 120%;
+//   }
 
-  .slider-description {
-    font-size: 1.25rem;
-    color: #333;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+//   .slider-description {
+//     font-size: 1.25rem;
+//     color: #333;
+//     line-height: 1.6;
+//     margin-bottom: 1.5rem;
 
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 150%;
-  }
+//     font-style: normal;
+//     font-weight: 400;
+//     font-size: 18px;
+//     line-height: 150%;
+//   }
 
-  // Responsive adjustments
-  @media (max-width: 992px) {
-    .slider-heading {
-      font-size: 2rem;
-    }
+//   // Responsive adjustments
+//   @media (max-width: 992px) {
+//     .slider-heading {
+//       font-size: 2rem;
+//     }
 
-    .slider-description {
-      font-size: 1.1rem;
-    }
-  }
+//     .slider-description {
+//       font-size: 1.1rem;
+//     }
+//   }
 
-  @media (max-width: 768px) {
-    margin: 1rem auto;
-    margin-bottom: 3.5rem;
-    border-radius: 8px;
+//   @media (max-width: 768px) {
+//     margin: 1rem auto;
+//     margin-bottom: 3.5rem;
+//     border-radius: 8px;
 
-    .carousel-item {
-      min-height: 250px;
-      padding: 1.5rem 0;
-    }
+//     .carousel-item {
+//       min-height: 250px;
+//       padding: 1.5rem 0;
+//     }
 
-    .slider-heading {
-      font-size: 1.75rem;
-      padding-left: 1rem;
+//     .slider-heading {
+//       font-size: 1.75rem;
+//       padding-left: 1rem;
 
-      &::before {
-        width: 4px;
-      }
-    }
+//       &::before {
+//         width: 4px;
+//       }
+//     }
 
-    .slider-description {
-      font-size: 1rem;
-    }
+//     .slider-description {
+//       font-size: 1rem;
+//     }
 
-    .carousel-control-prev,
-    .carousel-control-next {
-      width: 40px;
-      height: 40px;
-    }
-  }
+//     .carousel-control-prev,
+//     .carousel-control-next {
+//       width: 40px;
+//       height: 40px;
+//     }
+//   }
 
-  @media (max-width: 576px) {
-    .carousel-item {
-      .row {
-        text-align: center;
-      }
+//   @media (max-width: 576px) {
+//     .carousel-item {
+//       .row {
+//         text-align: center;
+//       }
 
-      .col-md-6 {
-        margin-bottom: 1rem;
-      }
-    }
+//       .col-md-6 {
+//         margin-bottom: 1rem;
+//       }
+//     }
 
-    .slider-heading {
-      font-size: 1.5rem;
-      padding-left: 0;
+//     .slider-heading {
+//       font-size: 1.5rem;
+//       padding-left: 0;
 
-      &::before {
-        display: none;
-      }
-    }
+//       &::before {
+//         display: none;
+//       }
+//     }
 
-    .slider-description {
-      font-size: 0.95rem;
-    }
+//     .slider-description {
+//       font-size: 0.95rem;
+//     }
 
-    .carousel-indicators {
-      margin-bottom: 0.5rem;
-    }
-  }
-}
+//     .carousel-indicators {
+//       margin-bottom: 0.5rem;
+//     }
+//   }
+// }
 
 // Host container padding (responsive)
-:host {
-  padding: 4rem 2rem;
+// :host {
+//   padding: 4rem 2rem;
 
-  @media (max-width: 768px) {
-    padding: 1.5rem;
+//   @media (max-width: 768px) {
+//     padding: 1.5rem;
+//   }
+
+//   @media (max-width: 576px) {
+//     padding: 1rem;
+//   }
+// }
+
+// .carousel {
+//   &:dir(rtl),
+//   &[dir="rtl"] {
+//     .carousel-control-prev {
+//       right: auto;
+//       left: 0;
+//     }
+
+//     .carousel-control-next {
+//       left: auto;
+//       right: 0;
+//     }
+
+//     .carousel-indicators {
+//       padding-right: 0;
+//       padding-left: 0;
+//     }
+
+//     .slider-heading,
+//     .slider-description {
+//       text-align: right;
+//     }
+//   }
+// }
+
+////////////////////////////////////////////////////////
+
+.about-section {
+  width: 100%;
+  padding: 4rem 4rem;
+  overflow: hidden; // Prevent animation overflow
+
+  .about-wrapper {
+    max-width: 85%;
+    margin: 0 auto;
+    flex-direction: column;
+    gap: 5rem; // ≈ 80px if your root font-size is 16px (16px * 5 = 80px)
   }
 
-  @media (max-width: 576px) {
-    padding: 1rem;
+  .section-title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 120%;
+    text-align: center;
+    letter-spacing: 0.2em;
+    color: #0061b7;
+    margin-bottom: 4rem;
+
+    .green-letter {
+      color: #069f0a;
+    }
+  }
+
+  // Flex container for text and image
+  .about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+
+    @media (max-width: 767.98px) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  .about-text {
+    flex: 1;
+    will-change: transform, opacity; // Optimize animations
+    h3 {
+      /* Heading */
+
+      font-style: normal;
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 120%;
+
+      color: #000000;
+
+      margin-bottom: 24px;
+    }
+    p {
+      margin-bottom: 1.5rem;
+      animation-duration: 1s;
+
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 200%;
+      /* or 36px */
+      letter-spacing: 0.1em;
+
+      color: #000000;
+
+      @media (max-width: 991.98px) {
+        font-size: 1.25rem;
+        line-height: 180%;
+      }
+    }
+  }
+
+  .about-image {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    will-change: transform, opacity;
+
+    img {
+      border-radius: 12px;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      @media (max-width: 767.98px) {
+        max-width: 90%;
+        margin: 0 auto;
+      }
+    }
+
+    // Tech dots animation
+    .tech-dot {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(0, 97, 183, 0.2);
+      z-index: 1;
+      animation: float 6s infinite ease-in-out;
+
+      &-1 {
+        width: 80px;
+        height: 80px;
+        top: -20px;
+        left: -20px;
+        animation-delay: 0s;
+      }
+
+      &-2 {
+        width: 60px;
+        height: 60px;
+        bottom: -10px;
+        right: -10px;
+        animation-delay: 1s;
+      }
+    }
   }
 }
 
-.carousel {
-  &:dir(rtl), &[dir="rtl"] {
-    .carousel-control-prev {
-      right: auto;
-      left: 0;
-    }
-    
-    .carousel-control-next {
-      left: auto;
-      right: 0;
-    }
-    
-    .carousel-indicators {
-      padding-right: 0;
-      padding-left: 0;
-    }
-    
-    .slider-heading, .slider-description {
-      text-align: right;
-    }
+.blue-letter {
+  color: #0061b7;
+}
+
+// Floating animation for tech dots
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  50% {
+    transform: translateY(0) translateX(20px);
+  }
+  75% {
+    transform: translateY(10px) translateX(-10px);
   }
 }

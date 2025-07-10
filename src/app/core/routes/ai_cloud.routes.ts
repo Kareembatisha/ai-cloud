@@ -4,6 +4,7 @@ import { AiCloudLayoutComponent } from '../../presentation/layouts/ai-cloud-layo
 import { HomeComponent } from '../../presentation/pages/ai-cloud/home/home.component';
 import { OurPartnersComponent } from '../../presentation/pages/ai-cloud/our-partners/our-partners.component';
 import { AboutUsComponent } from '../../presentation/pages/ai-cloud/about-us/about-us.component';
+import { CleanTechHomeComponent } from '../../presentation/pages/clean-tech/home/home.component';
 // import { AiDashboardComponent } from '../../features/ai-cloud/pages/ai-dashboard/ai-dashboard.component';
 // import { AiSettingsComponent } from '../../features/ai-cloud/pages/ai-settings/ai-settings.component';
 
@@ -26,6 +27,11 @@ export const AI_Cloud_ROUTES: Routes = [
         path: 'about-us',
         component: AboutUsComponent,
         title: 'About Us',
+      },
+      {
+        path: 'clean-tech',
+        component: CleanTechHomeComponent,
+        title: ' Clean-Tech',
       },
     ],
   },

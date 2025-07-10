@@ -11,46 +11,30 @@
 
 <!-- long-page.component.html -->
 <div class="page-container">
-  <!-- Vertical Scrollspy Navigation -->
-  <nav class="scrollspy-nav">
-    <div class="scrollspy-nav__header">
-      <img src="assets/cleanTech-logo.png" alt="Logo" width="160" />
-    </div>
-    <ul class="scrollspy-nav__list">
-      <li class="scrollspy-nav__item" *ngFor="let section of sections">
-        <a
-          class="scrollspy-nav__link"
+  <!-- Horizontal Scrollspy Navigation -->
+  <nav class="horizontal-scrollspy">
+    <div class="scrollspy-container">
+      <div class="scrollspy-header">
+        <img src="assets/cleanTech-logo.png" alt="Logo" width="160" />
+      </div>
+      <div class="scrollspy-stepper">
+        <div
+          class="step"
+          *ngFor="let section of sections"
           [class.active]="activeSection === section.id"
           (click)="scrollTo(section.id)"
         >
-          {{ section.title }}
-        </a>
-      </li>
-    </ul>
+          <span class="step-title">{{ section.title }}</span>
+        </div>
+      </div>
+    </div>
   </nav>
 
   <!-- Main Content -->
   <main class="content">
-    <section *ngFor="let section of sections" [id]="section.id" class="section">
-      <h2 class="section__title">{{ section.title }}</h2>
-      <div class="section__content">
-        <!-- Demo content - replace with your actual content -->
-        <p *ngFor="let i of [1, 2, 3, 4, 5]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui
-          mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor
-          neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim.
-          Phasellus molestie magna non est bibendum non venenatis nisl tempor.
-        </p>
-
-        <!-- Example cards for some sections -->
-        <div *ngIf="section.id === 'features'" class="features-grid">
-          <!-- Feature cards would go here -->
-        </div>
-
-        <div *ngIf="section.id === 'pricing'" class="pricing-cards">
-          <!-- Pricing cards would go here -->
-        </div>
-      </div>
-    </section>
+    <clean-tech-hero-section id="hero" #heroSection />
+    <app-about-us-section id="about" #aboutSection />
+    <app-stock-section id="stock" #stockSection />
+    <app-clean-tech-service id="services" #servicesSection />
   </main>
 </div>
