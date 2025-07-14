@@ -1,0 +1,69 @@
+<!-- Full-width Carousel -->
+<div class="carousel-wrapper my-4">
+  <div id="carouselExampleDark" class="carousel carousel-dark slide w-100">
+    <!-- Dynamic Indicators -->
+    <div class="carousel-indicators custom-indicators">
+      @for (item of carouselItems; track item.id; let i = $index) {
+      <button
+        type="button"
+        data-bs-target="#carouselExampleDark"
+        [attr.data-bs-slide-to]="i"
+        [class.active]="i === 0"
+        [attr.aria-current]="i === 0 ? 'true' : null"
+        [attr.aria-label]="'CAROUSEL.SLIDE' | translate : { num: i + 1 }"
+      ></button>
+      }
+    </div>
+
+    <div class="carousel-inner">
+      @for (item of carouselItems; track item.id; let i = $index) {
+      <div
+        class="carousel-item"
+        [class.active]="i === 0"
+        [attr.data-bs-interval]="item.interval"
+      >
+        <div style="min-height: 140px">
+          <div class="carousel-caption d-block">
+            <h5>
+              @if (item.titleKey) {
+              {{ item.titleKey | translate }}
+              } @else {
+              {{ item.title }}
+              }
+            </h5>
+            <p>
+              @if (item.descriptionKey) {
+              {{ item.descriptionKey | translate }}
+              } @else {
+              {{ item.description }}
+              }
+            </p>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleDark"
+      data-bs-slide="prev"
+      [attr.aria-label]="'CAROUSEL.PREV' | translate"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">{{ "CAROUSEL.PREV" | translate }}</span>
+    </button>
+
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleDark"
+      data-bs-slide="next"
+      [attr.aria-label]="'CAROUSEL.NEXT' | translate"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">{{ "CAROUSEL.NEXT" | translate }}</span>
+    </button>
+  </div>
+</div>

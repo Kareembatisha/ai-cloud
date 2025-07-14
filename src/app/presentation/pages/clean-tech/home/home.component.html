@@ -1,18 +1,6 @@
-<!-- 1 -->
-<!-- <clean-tech-hero-section /> -->
-<!-- 2 -->
-
-<!-- <app-about-us-section /> -->
-
-<!-- 3 -->
-<!-- <app-stock-section /> -->
-<!-- 4 -->
-<!-- <app-clean-tech-service /> -->
-
-<!-- long-page.component.html -->
 <div class="page-container">
-  <!-- Horizontal Scrollspy Navigation -->
-  <nav class="horizontal-scrollspy">
+  <!-- Floating Sidebar Navigation -->
+  <nav class="vertical-scrollspy">
     <div class="scrollspy-container">
       <div class="scrollspy-header">
         <img src="assets/cleanTech-logo.png" alt="Logo" width="160" />
@@ -32,9 +20,11 @@
 
   <!-- Main Content -->
   <main class="content">
-    <clean-tech-hero-section id="hero" #heroSection />
-    <app-about-us-section id="about" #aboutSection />
-    <app-stock-section id="stock" #stockSection />
-    <app-clean-tech-service id="services" #servicesSection />
+    <app-clean-tech-about-section id="about" #heroSection />
+    <app-clean-tech-iot-section id="iot" #aboutSection />
+    <app-clean-tech-features-slider id="features" #featuresSection />
+    <app-clean-tech-app-section id="app" #appSection />
+    <app-clean-tech-smart-operation-section id="operations" #stockSection />
+    <app-clean-tech-contact-us id="contact" #contactSection />
   </main>
 </div>

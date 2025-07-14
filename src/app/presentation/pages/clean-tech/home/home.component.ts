@@ -1,45 +1,53 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import { AboutUsSectionComponent } from '../../../components/ai-cloud/home/about-us-section/about-us-section.component';
-import { StockSectionComponent } from '../../../components/clean-tech/home/features-section/features-section.component';
-import { CleanTechServiceComponent } from '../../../components/ai-cloud/home/clean-tech-service/clean-tech-service.component';
-import { HeroSectionComponent } from '../../../components/clean-tech/home/hero-section/hero-section.component';
-import { debounceTime, fromEvent, Subscription } from 'rxjs';
+import { Component, ElementRef, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Subscription, fromEvent } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
+import { CleanTechAboutSectionComponent } from '../../../components/clean-tech/clean-tech-about-section/clean-tech-about-section.component';
+import { CleanTechIotSectionComponent } from '../../../components/clean-tech/clean-tech-iot-section/clean-tech-iot-section.component';
+import { CleanTechFeaturesSliderComponent } from '../../../components/clean-tech/clean-tech-features-slider/clean-tech-features-slider.component';
+import { CleanTechAppSectionComponent } from '../../../components/clean-tech/clean-tech-app-section/clean-tech-app-section.component';
+import { CleanTechSmartOperationSectionComponent } from '../../../components/clean-tech/clean-tech-smart-operation-section/clean-tech-smart-operation-section.component';
+import { CleanTechContactUsComponent } from '../../../components/clean-tech/clean-tech-contact-us/clean-tech-contact-us.component';
 
 @Component({
   selector: 'app-clean-tech-home',
+  standalone: true,
   imports: [
-    AboutUsSectionComponent,
-    CleanTechServiceComponent,
-    HeroSectionComponent,
-    StockSectionComponent,
     CommonModule,
+    CleanTechAboutSectionComponent,
+    CleanTechIotSectionComponent,
+    CleanTechFeaturesSliderComponent,
+    CleanTechAppSectionComponent,
+    CleanTechSmartOperationSectionComponent,
+    CleanTechContactUsComponent,
   ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+  styleUrls: ['./home.component.scss'],
 })
-export class CleanTechHomeComponent {
-  activeSection: string = 'hero';
+export class CleanTechHomeComponent implements OnInit, OnDestroy {
+  activeSection: string = 'about';
   sections = [
-    { id: 'hero', title: 'Home' },
-    { id: 'about', title: 'About Us' },
-    { id: 'stock', title: 'Stock' },
-    { id: 'services', title: 'Services' },
+    { id: 'about', title: 'About' },
+    { id: 'iot', title: 'Iot' },
+    { id: 'features', title: 'Features' },
+    { id: 'app', title: 'App' },
+    { id: 'operations', title: 'Operations' },
+    { id: 'contact', title: 'Contact' },
   ];
 
-  // Optionally, if you want to use ViewChildren for more precise control
-  @ViewChild('heroSection') heroSection!: ElementRef;
-  @ViewChild('aboutSection') aboutSection!: ElementRef;
-  // Add others as needed
+  private scrollSubscription!: Subscription;
 
   ngOnInit() {
     this.setupScrollSpy();
   }
 
   setupScrollSpy() {
-    window.addEventListener('scroll', () => {
-      this.detectActiveSection();
-    });
+    // Use debounceTime to optimize scroll performance
+    this.scrollSubscription = fromEvent(window, 'scroll')
+      .pipe(debounceTime(50))
+      .subscribe(() => {
+        this.detectActiveSection();
+      });
   }
 
   detectActiveSection() {
@@ -71,14 +79,15 @@ export class CleanTechHomeComponent {
     const element = document.getElementById(sectionId);
     if (element) {
       window.scrollTo({
-        top: element.offsetTop - 80, // Adjust for header height
+        top: element.offsetTop - 20, // Small offset for better visibility
         behavior: 'smooth',
       });
     }
   }
 
-  // Clean up the event listener when component is destroyed
   ngOnDestroy() {
-    window.removeEventListener('scroll', this.detectActiveSection);
+    if (this.scrollSubscription) {
+      this.scrollSubscription.unsubscribe();
+    }
   }
 }

@@ -1,105 +1,352 @@
-/* Updated with your brand colors */
-.horizontal-scrollspy {
-  position: sticky;
-  top: 0;
+/* Main layout */
+.page-container {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+.content {
+  flex: 1;
+  margin-left: 80px; /* Initial margin for sidebar */
+  transition: margin 0.3s ease;
+}
+
+/* Sidebar styles */
+.vertical-scrollspy {
+  position: fixed;
+  top: 50;
   left: 0;
-  width: 100%;
-  background: linear-gradient(90deg, #0061b7 0%, #069f0a 100%);
-  z-index: 100;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 1rem 0;
+  height: 80vh;
+  width: 80px;
+  background: linear-gradient(180deg, #0061b7 0%, #069f0a 100%);
+  z-index: 1000;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease;
+  overflow: hidden;
+
+  &:hover {
+    width: 240px;
+
+    .step-title {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .scrollspy-header img {
+      opacity: 1;
+    }
+  }
 }
 
 .scrollspy-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  gap: 2rem;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.5rem 0;
 }
 
+.scrollspy-header {
+  padding: 0 1.5rem;
+  margin-bottom: 2rem;
 
+  img {
+    opacity: 0;
+    transition: opacity 0.3s ease 0.2s;
+    width: 100%;
+    max-width: 160px;
+  }
+}
 
 .scrollspy-stepper {
   display: flex;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  padding-bottom: 0.5rem;
-  justify-content: flex-end;
+  flex-direction: column;
+  gap: 0.5rem;
   flex-grow: 1;
-}
-
-.scrollspy-stepper::-webkit-scrollbar {
-  display: none;
+  padding: 0 1rem;
 }
 
 .step {
   position: relative;
-  padding: 0.75rem 1.5rem;
-  margin-left: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
   color: white;
   font-weight: 500;
   font-size: 0.95rem;
-  white-space: nowrap;
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 8px;
   transition: all 0.3s ease;
-  flex-shrink: 0;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  &.active {
+    background: white;
+    color: #0061b7;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    .step-icon {
+      color: #0061b7;
+    }
+  }
 }
 
-.step:hover {
-  background: rgba(255, 255, 255, 0.25);
+.step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  margin-right: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.3s ease;
 }
 
-.step.active {
-  background: white;
-  color: #0061b7;
-  font-weight: 600;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.step.active::after {
-  content: "";
-  position: absolute;
-  bottom: -0.75rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 8px;
-  height: 8px;
-  background: white;
-  border-radius: 50%;
+.step-title {
+  text-align: center;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .scrollspy-container {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 0 1rem;
-    gap: 1rem;
+  .vertical-scrollspy {
+    width: 60px;
+
+    &:hover {
+      width: 60px;
+
+      .step-title {
+        opacity: 0;
+      }
+
+      .scrollspy-header img {
+        opacity: 0;
+      }
+    }
+  }
+
+  .content {
+    margin-left: 60px;
   }
 
   .scrollspy-header {
-    margin-bottom: 0.5rem;
-    text-align: center;
-  }
-
-  .scrollspy-header img {
-    width: 140px; /* Slightly smaller on mobile */
+    padding: 0 0.5rem;
+    margin-bottom: 1.5rem;
   }
 
   .scrollspy-stepper {
-    justify-content: flex-start;
+    padding: 0 0.5rem;
   }
 
   .step {
-    margin: 0 0.5rem 0 0;
-    padding: 0.6rem 1.2rem; /* Slightly smaller on mobile */
-    font-size: 0.9rem;
+    padding: 0.75rem;
+    justify-content: center;
+  }
+
+  .step-icon {
+    margin-right: 0;
+  }
+}
+
+/* Animation for active section indicator */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.step.active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  animation: pulse 2s infinite;
+  z-index: -1;
+}
+
+/* Sidebar styles */
+.vertical-scrollspy {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  height: 80vh;
+  width: 60px; /* Reduced width for circle */
+  background: linear-gradient(180deg, #0061b7 0%, #069f0a 100%);
+  z-index: 1000;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border-top-right-radius: 40px; /* Half circle */
+  border-bottom-right-radius: 40px; /* Half circle */
+  padding: 20px 0;
+
+  &:hover {
+    width: 200px; /* Slightly less than before for better proportions */
+    border-top-right-radius: 20px; /* Less curve when expanded */
+    border-bottom-right-radius: 20px; /* Less curve when expanded */
+
+    .step-title {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .scrollspy-header img {
+      opacity: 1;
+    }
+  }
+}
+
+/* Adjust container to match new design */
+.scrollspy-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0 10px; /* Reduced padding */
+}
+
+/* Adjust steps to fit new circular design */
+.step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 12px 8px; /* Adjusted padding */
+  margin: 4px 0; /* Added margin between items */
+  color: white;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 20px; /* More rounded items */
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  &.active {
+    background: white;
+    color: #0061b7;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    .step-icon {
+      color: #0061b7;
+    }
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .vertical-scrollspy {
+    width: 50px;
+    height: 70vh;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+
+    &:hover {
+      width: 50px; /* Don't expand on mobile */
+
+      .step-title {
+        opacity: 0;
+      }
+
+      .scrollspy-header img {
+        opacity: 0;
+      }
+    }
+  }
+
+  .step {
+    padding: 10px 6px;
+    justify-content: center;
+  }
+
+  .step-icon {
+    margin-right: 0;
+  }
+}
+
+
+/* Sidebar styles */
+.vertical-scrollspy {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  height: 80vh;
+  width: 60px;
+  background: linear-gradient(180deg, #0061b7 0%, #069f0a 100%);
+  z-index: 1000;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  padding: 20px 0;
+
+  &:hover {
+    width: 200px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    .step-title {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .scrollspy-header img {
+      opacity: 1;
+    }
+  }
+}
+
+/* Adjust content margin only for desktop */
+.content {
+  margin-left: 80px; /* Space for sidebar */
+  transition: margin 0.3s ease;
+}
+
+/* Responsive adjustments - Hide sidebar completely on mobile */
+@media (max-width: 768px) {
+  .vertical-scrollspy {
+    display: none; /* Completely hide sidebar */
+  }
+
+  .content {
+    margin-left: 0; /* Remove margin when sidebar is hidden */
+  }
+
+  /* Optional: Add a mobile menu toggle button */
+  .mobile-menu-toggle {
+    display: block;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+    background: linear-gradient(180deg, #0061b7 0%, #069f0a 100%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
   }
 }

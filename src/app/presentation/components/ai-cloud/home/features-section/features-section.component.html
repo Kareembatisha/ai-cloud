@@ -1,3 +1,4 @@
+<!-- features-section.component.html -->
 <section class="features-section">
   <div class="container text-center">
     <!-- Title with letter animations -->
@@ -15,180 +16,65 @@
       {{ "FEATURES.SUBTITLE" | translate }}
     </p>
 
-    <!-- Features Grid -->
-    <div class="features-grid">
-      <div
-        class="feature-item"
-        appScrollTrigger
-        data-animation="fadeInUp"
-        data-delay="2s"
-      >
-        <div class="feature-icon-wrapper">
-          <img
-            [src]="'assets/feature.png'"
-            [alt]="'FEATURES.FEATURE1_ALT' | translate"
-          />
-          <div class="icon-pulse"></div>
+    <!-- Features Slider -->
+    <div class="features-slider">
+      <div id="featuresCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          @for (slide of groupedFeatures; track slide[0].id; let i = $index) {
+          <div class="carousel-item" [class.active]="i === 0">
+            <div class="feature-slide-container">
+              @for (feature of slide; track feature.id) {
+              <div class="feature-card">
+                <div class="feature-image-container">
+                  <img
+                    [src]="feature.icon"
+                    [alt]="feature.title"
+                    class="feature-image"
+                  />
+                </div>
+                <div class="feature-content">
+                  <h5>{{ feature.title }}</h5>
+                  <p>{{ feature.description }}</p>
+                </div>
+              </div>
+              }
+            </div>
+          </div>
+          }
         </div>
-        <h5>{{ "FEATURES.FEATURE1_TITLE" | translate }}</h5>
-        <p>{{ "FEATURES.FEATURE1_DESC" | translate }}</p>
-      </div>
 
-      <div
-        class="feature-item"
-        appScrollTrigger
-        data-animation="fadeInUp"
-        data-delay="3s"
-      >
-        <div class="feature-icon-wrapper">
-          <img
-            [src]="'assets/feature.png'"
-            [alt]="'FEATURES.FEATURE2_ALT' | translate"
-          />
-          <div class="icon-pulse"></div>
+        <!-- Carousel indicators -->
+        <div class="carousel-indicators">
+          @for (slide of groupedFeatures; track slide[0].id; let i = $index) {
+          <button
+            type="button"
+            data-bs-target="#featuresCarousel"
+            [attr.data-bs-slide-to]="i"
+            [class.active]="i === 0"
+            [attr.aria-label]="'Slide ' + (i + 1)"
+          ></button>
+          }
         </div>
-        <h5>{{ "FEATURES.FEATURE2_TITLE" | translate }}</h5>
-        <p>{{ "FEATURES.FEATURE2_DESC" | translate }}</p>
-      </div>
 
-      <div
-        class="feature-item"
-        appScrollTrigger
-        data-animation="fadeInUp"
-        data-delay="4s"
-      >
-        <div class="feature-icon-wrapper">
-          <img
-            [src]="'assets/feature.png'"
-            [alt]="'FEATURES.FEATURE3_ALT' | translate"
-          />
-          <div class="icon-pulse"></div>
-        </div>
-        <h5>{{ "FEATURES.FEATURE3_TITLE" | translate }}</h5>
-        <p>{{ "FEATURES.FEATURE3_DESC" | translate }}</p>
-      </div>
-
-      <div
-        class="feature-item"
-        appScrollTrigger
-        data-animation="fadeInUp"
-        data-delay="5s"
-      >
-        <div class="feature-icon-wrapper">
-          <img
-            [src]="'assets/feature.png'"
-            [alt]="'FEATURES.FEATURE4_ALT' | translate"
-          />
-          <div class="icon-pulse"></div>
-        </div>
-        <h5>{{ "FEATURES.FEATURE4_TITLE" | translate }}</h5>
-        <p>{{ "FEATURES.FEATURE4_DESC" | translate }}</p>
-      </div>
-      <!-- //////////////////////////////////////// -->
-
-      <div
-        class="feature-item"
-        appScrollTrigger
-        data-animation="fadeInUp"
-        data-delay="5s"
-      >
-        <div class="feature-icon-wrapper">
-          <img
-            [src]="'assets/feature.png'"
-            [alt]="'FEATURES.FEATURE4_ALT' | translate"
-          />
-          <div class="icon-pulse"></div>
-        </div>
-        <h5>Systems and Application Programming.</h5>
-        <p>{{ "FEATURES.FEATURE4_DESC" | translate }}</p>
-      </div>
-
-      <div
-        class="feature-item"
-        appScrollTrigger
-        data-animation="fadeInUp"
-        data-delay="5s"
-      >
-        <div class="feature-icon-wrapper">
-          <img
-            [src]="'assets/feature.png'"
-            [alt]="'FEATURES.FEATURE4_ALT' | translate"
-          />
-          <div class="icon-pulse"></div>
-        </div>
-        <h5>Professional Website Development.</h5>
-        <p>{{ "FEATURES.FEATURE4_DESC" | translate }}</p>
-      </div>
-
-      <div
-        class="feature-item"
-        appScrollTrigger
-        data-animation="fadeInUp"
-        data-delay="5s"
-      >
-        <div class="feature-icon-wrapper">
-          <img
-            [src]="'assets/feature.png'"
-            [alt]="'FEATURES.FEATURE4_ALT' | translate"
-          />
-          <div class="icon-pulse"></div>
-        </div>
-        <h5>UI/UX Design.</h5>
-        <p>{{ "FEATURES.FEATURE4_DESC" | translate }}</p>
-      </div>
-
-      <div
-        class="feature-item"
-        appScrollTrigger
-        data-animation="fadeInUp"
-        data-delay="5s"
-      >
-        <div class="feature-icon-wrapper">
-          <img
-            [src]="'assets/feature.png'"
-            [alt]="'FEATURES.FEATURE4_ALT' | translate"
-          />
-          <div class="icon-pulse"></div>
-        </div>
-        <h5>Artificial Intelligence and Data Analysis Solutions.</h5>
-        <p>{{ "FEATURES.FEATURE4_DESC" | translate }}</p>
-      </div>
-
-      <div
-        class="feature-item"
-        appScrollTrigger
-        data-animation="fadeInUp"
-        data-delay="5s"
-      >
-        <div class="feature-icon-wrapper">
-          <img
-            [src]="'assets/feature.png'"
-            [alt]="'FEATURES.FEATURE4_ALT' | translate"
-          />
-          <div class="icon-pulse"></div>
-        </div>
-        <h5>Marketing Campaign Management and Paid Advertising.</h5>
-        <p>{{ "FEATURES.FEATURE4_DESC" | translate }}</p>
-      </div>
-
-      <div
-        class="feature-item"
-        appScrollTrigger
-        data-animation="fadeInUp"
-        data-delay="5s"
-      >
-        <div class="feature-icon-wrapper">
-          <img
-            [src]="'assets/feature.png'"
-            [alt]="'FEATURES.FEATURE4_ALT' | translate"
-          />
-          <div class="icon-pulse"></div>
-        </div>
-        <h5>
-          Digital Marketing Content Production – Motion Graphics, Editing,
-          Social Media.
-        </h5>
-        <p>{{ "FEATURES.FEATURE4_DESC" | translate }}</p>
+        <!-- Carousel controls -->
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#featuresCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#featuresCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
     </div>
   </div>
