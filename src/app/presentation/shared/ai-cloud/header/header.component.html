@@ -1,3 +1,10 @@
+<!-- ===========================================
+  Responsive Animated Navbar Component
+  - Contains brand logo, navigation links, language selector, and contact button
+  - Uses appScrollTrigger directives for scroll animations with custom delays
+  - Fully responsive with Bootstrap collapse & toggler on smaller screens
+=========================================== -->
+
 <nav
   class="navbar navbar-expand-lg"
   appScrollTrigger
@@ -6,7 +13,11 @@
   <div
     class="container-fluid px-4 py-1 d-flex align-items-center justify-content-between"
   >
-    <!-- Logo Left -->
+    <!-- ===========================
+      Logo (Left-aligned)
+      - Animated fadeInLeft on scroll
+      - Router link to homepage
+    =========================== -->
     <a
       class="navbar-brand me-3"
       routerLink=""
@@ -17,7 +28,12 @@
       <img src="assets/ai_logo.png" alt="Logo" width="100" />
     </a>
 
-    <!-- Hamburger for small screens -->
+    <!-- ===========================
+      Hamburger Toggle Button
+      - Visible on small screens
+      - Triggers collapse/expand of navbar
+      - Animated fadeInRight
+    =========================== -->
     <button
       class="navbar-toggler"
       type="button"
@@ -33,13 +49,25 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Nav + Contact Wrap -->
+    <!-- ===========================
+      Navbar Links & Right Section
+      - Centered nav links on large screens
+      - Collapsible on smaller screens
+      - Includes language selector & contact button
+      - Animated fadeInDown
+    =========================== -->
     <div
       class="collapse navbar-collapse"
       id="navbarNav"
       appScrollTrigger
       data-animation="fadeInDown"
     >
+      <!-- ===========================
+        Main Navigation Links
+        - Home, Products dropdown, Partners, About
+        - Uses translation pipe for internationalization
+        - Each link has staggered fadeInUp animation
+      =========================== -->
       <ul class="navbar-nav mx-auto text-center">
         <li
           class="nav-item mx-2"
@@ -98,14 +126,20 @@
         </li>
       </ul>
 
-      <!-- Language Selector and Contact Button -->
+      <!-- ===========================
+        Language Selector & Contact Button
+        - Aligned to the right on large screens, centered on mobile
+        - Includes language dropdown for switching languages
+        - Contact button reuses custom Angular component with translation
+        - Animated fadeInRight
+      =========================== -->
       <div
         class="d-flex align-items-center justify-content-center justify-content-lg-end mt-3 mt-lg-0 gap-3"
         appScrollTrigger
         data-animation="fadeInRight"
         data-delay="0.7s"
       >
-        <!-- Language Selector Dropdown -->
+        <!-- Language Dropdown -->
         <div class="dropdown">
           <button
             class="btn btn-outline-secondary dropdown-toggle"
@@ -130,7 +164,7 @@
           </ul>
         </div>
 
-        <!-- Contact Us Button Right -->
+        <!-- Custom Contact Button Component -->
         <app-contact-us-button [label]="'HERO.CONTACT_BUTTON' | translate">
         </app-contact-us-button>
       </div>

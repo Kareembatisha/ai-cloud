@@ -1,4 +1,8 @@
-/* Add these to your existing nav styles */
+/* ===========================================
+  Language Selector Styles
+  - Adds margin, custom dropdown button styling, and hover effects
+  - Improves visual consistency and usability
+=========================================== */
 .language-selector {
   margin-right: 15px;
 
@@ -10,10 +14,12 @@
     background: white;
     color: #333;
 
+    /* Hover effect for subtle visual feedback */
     &:hover {
       background: #f8f9fa;
     }
 
+    /* Adjust caret spacing */
     &::after {
       margin-left: 8px;
     }
@@ -22,6 +28,7 @@
   .dropdown-item {
     cursor: pointer;
 
+    /* Highlight selected language on hover */
     &:hover {
       background-color: #0061b7;
       color: white;
@@ -29,12 +36,20 @@
   }
 }
 
-/* Adjust contact button spacing when language selector is present */
+/* ===========================================
+  Contact Button Spacing
+  - Remove default left margin when language selector is present
+  - Keeps buttons aligned neatly on the right
+=========================================== */
 .contact-btn {
   margin-left: 0 !important;
 }
 
-/* Responsive adjustments */
+/* ===========================================
+  Responsive Adjustments (max-width: 991.98px)
+  - Stack language selector and contact button vertically
+  - Ensure full-width on small screens for better UX
+=========================================== */
 @media (max-width: 991.98px) {
   .language-selector {
     margin-right: 0;

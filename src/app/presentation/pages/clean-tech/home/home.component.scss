@@ -2,7 +2,6 @@
 .page-container {
   display: flex;
   min-height: 100vh;
-  position: relative;
 }
 
 .content {
@@ -282,7 +281,6 @@
   }
 }
 
-
 /* Sidebar styles */
 .vertical-scrollspy {
   position: fixed;
@@ -347,6 +345,6 @@
     color: white;
     font-size: 24px;
     cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   }
 }

@@ -1,13 +1,15 @@
 /* ============================
    Footer Left Section Styles
-   ============================ */
+   - Contains logo, address, contact info, and social media icons
+   - Uses brand colors & subtle spacing
+============================ */
 .footer-left {
-  /* Logo image styling */
+  /* Logo styling: ensure block display for alignment */
   img {
     display: block;
   }
 
-  /* Headings (Address, Contact labels) */
+  /* Section headings: address & contact labels */
   h6 {
     font-weight: 600;
     margin-bottom: 6px;
@@ -17,7 +19,7 @@
     color: #000000;
   }
 
-  /* Paragraph text (Address, contact info) */
+  /* Paragraph text: address value & phone/email */
   p {
     margin: 0 0 8px 0;
     font-style: normal;
@@ -27,42 +29,34 @@
     color: #0061b7;
   }
 
-  /* Social Media Icons */
+  /* Social Media Icons: use brand colors & smooth hover transitions */
   .social-icons a {
     font-size: 18px;
     transition: color 0.3s ease;
 
-    /* Facebook brand color */
     &.facebook {
       color: #1877f2;
-
       &:hover {
         color: #0f4ab8;
       }
     }
 
-    /* Twitter brand color */
     &.twitter {
       color: #1da1f2;
-
       &:hover {
         color: #0d8ddb;
       }
     }
 
-    /* LinkedIn brand color */
     &.linkedin {
       color: #0a66c2;
-
       &:hover {
         color: #064a8b;
       }
     }
 
-    /* Instagram brand color (solid fallback) */
     &.instagram {
       color: #e4405f;
-
       &:hover {
         color: #b32b46;
       }
@@ -72,7 +66,9 @@
 
 /* ============================
    Footer Right Section Links
-   ============================ */
+   - Quick navigation links styled in uppercase & bold
+   - Subtle hover underline & brand color on hover
+============================ */
 .footer-right a {
   font-weight: 700;
   text-transform: uppercase;
@@ -87,8 +83,10 @@
 }
 
 /* ============================
-   Footer Bottom Links Styling
-   ============================ */
+   Footer Bottom Section Links
+   - Privacy, terms & cookies
+   - Smaller text size & subtle hover effect
+============================ */
 .footer-links a {
   font-size: 14px;
   color: #000;
@@ -102,12 +100,13 @@
 
 /* ============================
    Footer Content Layout
-   ============================ */
+   - Horizontal spacing between left & right columns
+============================ */
 .footer-content {
-  gap: 40px; /* spacing between left and right */
+  gap: 40px;
 }
 
-/* Responsive layout for small screens */
+/* Responsive adjustments: stack columns on small screens */
 @media (max-width: 767.98px) {
   .footer-content {
     flex-direction: column;
@@ -123,17 +122,24 @@
 
 /* ============================
    Footer Bottom Section
-   ============================ */
+   - Top border styled with brand color
+   - Adjust flex layout on tablets & small desktops
+============================ */
 .footer-bottom {
   border-top-color: #0061b7;
 
-  /* Responsive layout for smaller desktops and tablets */
   @media (max-width: 991.98px) {
     flex-direction: column;
     gap: 10px;
   }
 }
 
+/* ============================
+   Footer Gradient Top Section
+   - CTA block with brand background gradient
+   - Split into left (text & image) and right (logo)
+   - Rounded top corners & padding
+============================ */
 .footer-gradient {
   width: 100%;
   display: flex;
@@ -145,11 +151,10 @@
     rgba(1, 75, 141, 0.92) 60.46%,
     rgba(0, 34, 65, 0.86) 97.79%
   );
-
   border-radius: 14px 14px 0 0;
   padding: 3rem;
 
-  /* Left side: image + text in a row */
+  /* Left side: text & image stacked horizontally */
   .left-side {
     width: 70%;
     display: flex;
@@ -157,38 +162,31 @@
     gap: 1rem;
     padding: 0.5rem 1rem;
 
-    .image-container {
-      img {
-        display: block;
-        width: 190px;
-        height: 190px;
-        object-fit: contain; /* keep aspect ratio */
-      }
+    .image-container img {
+      display: block;
+      width: 190px;
+      height: 190px;
+      object-fit: contain;
     }
 
     .text-container {
-      /* Heading */
       h5 {
-        font-style: normal;
         font-weight: 600;
         font-size: 48px;
-        line-height: 100%;
-        color: #ffff;
+        color: #fff;
         margin: 0 0 0.5rem 0;
       }
-      /* Paragraph */
       p {
-        font-style: normal;
         font-weight: 400;
         font-size: 32px;
-        line-height: 150%;
-        color: #ffff;
+        color: #fff;
         margin: 0 0 1rem 0;
+        line-height: 150%;
       }
     }
   }
 
-  /* Right side: bottom-aligned image */
+  /* Right side: bottom-aligned white logo */
   .right-side {
     width: 30%;
     display: flex;
@@ -203,7 +201,9 @@
     }
   }
 
-  /* Responsive styles for smaller screens */
+  /* ============================
+     Responsive: tablets & small screens
+  ============================ */
   @media (max-width: 991.98px) {
     flex-direction: column;
     align-items: center;
@@ -216,11 +216,9 @@
       text-align: center;
       padding: 0;
 
-      .image-container {
-        img {
-          width: 150px;
-          height: 150px;
-        }
+      .image-container img {
+        width: 150px;
+        height: 150px;
       }
 
       .text-container {
@@ -242,12 +240,13 @@
 
       img {
         width: 120px;
-        height: auto;
       }
     }
   }
 
-  /* Further scale down for small phones */
+  /* ============================
+     Further scaling for small phones
+  ============================ */
   @media (max-width: 575.98px) {
     .left-side {
       .image-container img {
@@ -271,6 +270,10 @@
   }
 }
 
+/* ============================
+   RTL Support
+   - Adjusts layout, alignment, and spacing for right-to-left languages
+============================ */
 footer {
   &:dir(rtl),
   &[dir="rtl"] {
@@ -280,26 +283,19 @@ footer {
       flex-direction: row-reverse;
     }
 
-    .footer-left {
-      text-align: right;
-    }
-
+    .footer-left,
     .footer-right {
       text-align: right;
     }
 
-    .social-icons {
-      a {
-        margin-right: 0 !important;
-        margin-left: 1rem;
-      }
+    .social-icons a {
+      margin-right: 0 !important;
+      margin-left: 1rem;
     }
 
-    .footer-links {
-      a {
-        margin-left: 0 !important;
-        margin-right: 0.5rem;
-      }
+    .footer-links a {
+      margin-left: 0 !important;
+      margin-right: 0.5rem;
     }
 
     .footer-bottom {

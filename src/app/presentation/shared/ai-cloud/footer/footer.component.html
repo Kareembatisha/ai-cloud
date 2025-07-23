@@ -1,5 +1,18 @@
-<!-- Footer -->
+<!-- ===========================================
+  Footer Component
+  - Contains gradient top section with CTA & logo
+  - Middle section with address, contact, and social media links
+  - Bottom bar with copyright and legal links
+  - Fully responsive using Bootstrap utilities
+  - Internationalized using Angular translate pipe
+=========================================== -->
 <footer class="text-center text-lg-start bg-body-white">
+  <!-- ===========================================
+    Top Gradient Section
+    - Left side: "Speak to us" image, title, subtitle, and contact button
+    - Right side: white logo
+    - Encourages users to engage
+  =========================================== -->
   <div class="footer-gradient">
     <div class="left-side">
       <div class="image-container">
@@ -12,6 +25,7 @@
       <div class="text-container">
         <h5>{{ "FOOTER.SPEAK_TO_US" | translate }}</h5>
         <p>{{ "FOOTER.READY_FOR_FUTURE" | translate }}</p>
+        <!-- Reusable Angular contact button component -->
         <app-contact-us-button
           link="#"
           [label]="'FOOTER.CONTACT_US' | translate"
@@ -28,15 +42,23 @@
     </div>
   </div>
 
-  <!-- Section: Links  -->
+  <!-- ===========================================
+    Middle Links Section
+    - Two columns: left (company info & social), right (quick links)
+    - Uses Bootstrap flex & responsive utilities
+  =========================================== -->
   <section class="footer-section py-5">
     <div class="container">
       <div
         class="footer-content d-flex flex-column flex-md-row justify-content-between"
       >
-        <!-- Left -->
+        <!-- ===========================================
+          Left Column
+          - Logo
+          - Address & contact info
+          - Social media icons with aria-labels for accessibility
+        =========================================== -->
         <div class="footer-left mb-4 mb-md-0">
-          <!-- Logo -->
           <a class="navbar-brand mb-1 d-inline-block" href="#">
             <img
               src="assets/ai_logo.png"
@@ -45,11 +67,9 @@
             />
           </a>
 
-          <!-- Address Label -->
           <h6 class="fw-bold mt-3">{{ "FOOTER.ADDRESS" | translate }}</h6>
           <p>{{ "FOOTER.ADDRESS_VALUE" | translate }}</p>
 
-          <!-- Contact Label -->
           <h6 class="fw-bold mt-3">{{ "FOOTER.CONTACT" | translate }}</h6>
           <p><i class="fas fa-phone me-2"></i> XXX XXXX 966+</p>
           <p><i class="fas fa-envelope me-2"></i> info&#64;aicloud.sa</p>
@@ -87,7 +107,11 @@
           </div>
         </div>
 
-        <!-- Right -->
+        <!-- ===========================================
+          Right Column
+          - Quick navigation links to main site sections
+          - Each link uses translation for i18n support
+        =========================================== -->
         <div class="footer-right">
           <p class="text-uppercase fw-bold mb-4">
             <a href="#" class="text-decoration-none text-dark">{{
@@ -114,16 +138,21 @@
     </div>
   </section>
 
-  <!-- Bottom Section -->
+  <!-- ===========================================
+    Bottom Bar Section
+    - Contains copyright
+    - Privacy, terms, and cookies policy links
+    - Fully responsive: stacked on mobile, inline on desktop
+  =========================================== -->
   <section
     class="footer-bottom d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center p-4 border-top border-primary"
   >
-    <!-- Left -->
+    <!-- Left: Copyright Text -->
     <div class="me-0 me-lg-5 mb-3 mb-lg-0 text-center text-lg-start">
       <span>{{ "FOOTER.COPYRIGHT" | translate }}</span>
     </div>
 
-    <!-- Right -->
+    <!-- Right: Policy Links -->
     <div class="footer-links text-center text-lg-end">
       <a href="#" class="mx-2 text-decoration-none text-dark">{{
         "FOOTER.LINKS.PRIVACY" | translate

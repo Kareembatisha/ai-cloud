@@ -19,7 +19,7 @@
     text-align: center;
     letter-spacing: 0.02em;
     color: #000000;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem;  
     will-change: transform, opacity;
   }
 
@@ -49,6 +49,7 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
       padding: 0 2rem; // Added side padding for arrows
+      align-items: stretch; // This ensures all items stretch to same height
     }
 
     .feature-card {
@@ -58,7 +59,7 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      height: 100%;
+      height: auto;
       transition: all 0.4s ease;
       will-change: transform, box-shadow;
 
@@ -82,7 +83,7 @@
       }
 
       .feature-content {
-        padding: 1rem;
+        padding: 1rem 1rem 0 1rem;
         text-align: left;
         display: flex;
         flex-direction: column;

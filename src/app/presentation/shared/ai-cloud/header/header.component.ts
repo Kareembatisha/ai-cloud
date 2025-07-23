@@ -6,6 +6,13 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
+  // ===========================================
+  // Standalone Component Imports
+  // - ContactUsButtonComponent: reusable CTA button
+  // - RouterModule: for routerLink navigation
+  // - ScrollTriggerDirective: triggers scroll-based animations
+  // - TranslateModule: enables translation pipes in the template
+  // ===========================================
   imports: [
     ContactUsButtonComponent,
     RouterModule,
@@ -16,18 +23,33 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
+  // ===========================================
+  // Holds the currently active language code (e.g., 'en' or 'ar')
+  // Used for UI language toggle and updating the template
+  // ===========================================
   currentLanguage: string = 'en';
 
   constructor(private translate: TranslateService) {
-    // Set default language
+    // ===========================================
+    // Initialize translation settings
+    // - Set default language to English
+    // - Attempt to detect browser language (only 'en' or 'ar')
+    // - Fallback to English if unsupported
+    // ===========================================
     translate.setDefaultLang('en');
 
-    // Get browser language or use default
     const browserLang = translate.getBrowserLang();
     this.currentLanguage = browserLang?.match(/en|ar/) ? browserLang : 'en';
     translate.use(this.currentLanguage);
   }
 
+  // ===========================================
+  // Change application language
+  // - Updates translation service to the selected language
+  // - Updates <html> tag attributes:
+  //   - dir: sets text direction (rtl/ltr)
+  //   - lang: sets language attribute for accessibility and SEO
+  // ===========================================
   changeLanguage(language: string) {
     this.translate.use(language);
     this.currentLanguage = language;

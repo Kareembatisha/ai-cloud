@@ -1,21 +1,57 @@
+/* ===========================================
+  Hero Section Styles
+  - Large hero area with background image, title, description & CTA
+  - Uses responsive scaling & max/min height to adapt to screens
+=========================================== */
 .hero-section {
   background-image: url("/assets/ai-cloud-hero.png");
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
   color: #ffffff;
-  padding: 2rem 0;
+  height: 90vh; /* Fill most of viewport height */
+  min-height: 600px; /* Ensure it doesn't get too short */
+  max-height: 1200px; /* Prevent being too tall on large screens */
+  display: flex;
+  align-items: center;
   overflow: hidden;
 
-  @media (min-width: 992px) {
-    padding: 18rem 0;
+  /* Adjust layout on very short screens (e.g., laptops) */
+  @media (max-height: 600px) {
+    height: auto;
+    min-height: 600px;
+    padding: 4rem 0;
   }
 
+  /* Container keeps consistent width */
+  .container {
+    width: 100%;
+  }
+
+  /* ===========================================
+     Hero Content Block
+     - Contains title, description, and CTA button
+     - Adds vertical padding that scales down on short screens
+  =========================================== */
+  .hero-content {
+    padding: 2rem 0;
+
+    @media (max-height: 700px) and (min-width: 992px) {
+      padding: 1rem 0;
+    }
+  }
+
+  /* ===========================================
+     Hero Title
+     - Responsive font sizes for readability on all devices
+     - Slightly smaller on shorter screens to avoid overflow
+  =========================================== */
   .hero-title {
     font-size: 2.2rem;
     font-weight: 700;
     margin-bottom: 1rem;
     line-height: 1.2;
-    animation-duration: 1s; // Override animate.css duration if needed
+    animation-duration: 1s;
 
     @media (min-width: 768px) {
       font-size: 2.8rem;
@@ -24,8 +60,18 @@
     @media (min-width: 992px) {
       font-size: 3.5rem;
     }
+
+    @media (max-height: 800px) and (min-width: 992px) {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
   }
 
+  /* ===========================================
+     Hero Description
+     - Responsive font sizing and right padding for larger screens
+     - Padding helps avoid overlap with image
+  =========================================== */
   .hero-description {
     font-size: 1rem;
     margin-bottom: 2rem;
@@ -38,22 +84,41 @@
     @media (min-width: 992px) {
       padding-right: 10rem;
     }
+
+    @media (max-height: 800px) and (min-width: 992px) {
+      margin-bottom: 1rem;
+      padding-right: 5rem;
+    }
   }
 
+  /* CTA Button: keep inline-block for layout & animation */
   app-contact-us-button {
     display: inline-block;
     animation-duration: 1s;
   }
 
+  /* ===========================================
+     Right Image Wrapper
+     - Holds hero illustration or visual
+     - Ensures correct scaling & positioning
+  =========================================== */
   .image-wrapper {
     position: relative;
+    height: 100%;
 
     img {
       max-width: 100%;
       height: auto;
       display: block;
       position: relative;
-      z-index: 2;
+      z-index: 2; /* Keeps image above background elements */
     }
   }
+
+  /* Remove side padding on large screens for edge-to-edge effect */
+  @media (min-width: 992px) {
+    padding: 0;
+  }
 }
+
+
